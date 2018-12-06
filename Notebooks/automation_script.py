@@ -56,7 +56,7 @@ def get_url(dataset_name):
     return dataset_info
 
 
-def get_keras_params(X,Y,data_info,config):
+def get_keras_params(X,Y,predictions,data_info,config):
     from keras.models import Sequential
     from keras.layers.core import Dense, Activation
     from keras.utils import np_utils
@@ -70,6 +70,7 @@ def get_keras_params(X,Y,data_info,config):
     input_dim = X.shape[1]
     epoch = config['epoch']
     batch_size = config['batch_size']
+    verbose = config['verbose']
 
 
     model = Sequential()
@@ -82,12 +83,14 @@ def get_keras_params(X,Y,data_info,config):
 
     # Fit the model #
 
-    model.fit(x_train, y_train, epochs=epoch, batch_size=batch_size)
+    model.fit(x_train, y_train, epochs=epoch, batch_size=batch_size,verbose=verbose)
 
     # Evaluate the model #
 
-    scores = model.evaluate(x_test, y_test)
+    scores = model.evaluate(x_test, predictions)
+    scores2 = model.evaluate(x_test, y_test)
     print("\n%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
+    print("\n%s: %.2f%%" % (model.metrics_names[1], scores2[1]*100))
 
     # Prepare Keras configuration #
     keras_params = model.get_config()
@@ -115,7 +118,7 @@ def get_scikit_params(X,Y):
     score = logisticRegr.score(x_test,y_test)
     print(score)
     scikit_params = logisticRegr.get_params(deep=True)
-    return str(round(score*100,2)) + " %", scikit_params
+    return str(round(score*100,2)) + " %", scikit_params, predictions
 
 
 def write_to_mastersheet(data,X,Y,accuracy_values):
@@ -158,6 +161,8 @@ def write_to_mastersheet(data,X,Y,accuracy_values):
     worksheet.update_cell(row_nb+1, worksheet.find("Keras acc").col, accuracy_values['keras'])
     worksheet.update_cell(row_nb+1, worksheet.find("Scikit acc").col, accuracy_values['scikit'])
     worksheet.update_cell(row_nb+1, worksheet.find("Kfold").col, accuracy_values['kfold'])
+    worksheet.update_cell(row_nb+1, worksheet.find("Type").col, data['type'])
+
 
 
 def get_kfold(X,Y,config):
