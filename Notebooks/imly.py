@@ -52,7 +52,7 @@ class dope(LinearRegression):
             filename = 'scikit_model'
             pickle.dump(self.model, open(filename, 'wb'))
 
-        else: 
+        else:
             self.save_as_onnx()
 
     def fit_keras_model(self, x_train, y_train):
@@ -79,7 +79,10 @@ class dope(LinearRegression):
                     grid_downsample=0.5)
 
     def save_as_onnx():
-        import os,json,zipfile,shutil
+        import os
+        import json
+        import zipfile
+        import shutil
         from keras.models import model_from_json
         archive = zipfile.ZipFile('linear_regression_firstDataset.zip', 'r')
         model_file = archive.open('linear_regression_firstDataset_model.json')
@@ -94,8 +97,8 @@ class dope(LinearRegression):
         # json_file.close()
         loaded_model = model_from_json(loaded_model_json)
         # load weights into new model
-        loaded_model.load_weights("./linear_regression_firstDataset/linear_regression_firstDataset_model.h5")
-
+        loaded_model.load_weights(
+            "./linear_regression_firstDataset/linear_regression_firstDataset_model.h5")
 
         shutil.rmtree('./linear_regression_firstDataset_unzip')
         print("Loaded model from disk")
