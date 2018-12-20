@@ -8,7 +8,7 @@ from keras.activations import linear
 import talos as ta
 
 
-class dope(LinearRegression):
+class dope(model_a):
     def __init__(self, model):
         self.model = model
         # if model == LinearRegression:
