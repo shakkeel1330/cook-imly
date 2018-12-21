@@ -238,3 +238,263 @@
 (2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x0000020997B12620>]','[<function linear at 0x0000020997B3EC80>]',nan
 (2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x0000020997B12620>]','[<function linear at 0x0000020997B3EC80>]',nan
 (2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x0000020997B12620>]','[<function linear at 0x0000020997B3EC80>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[1, 2, 3, 4],[10, 20, 40],[None],'[None]','['SGD', 'nadam']','[<function mean_squared_error at 0x000002313C595730>]','[<function linear at 0x000002313C5CAD90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002100C7546A8>]','[<function linear at 0x000002100C789D08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002100C7546A8>]','[<function linear at 0x000002100C789D08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002100C7546A8>]','[<function linear at 0x000002100C789D08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002100C7546A8>]','[<function linear at 0x000002100C789D08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002100C7546A8>]','[<function linear at 0x000002100C789D08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002100C7546A8>]','[<function linear at 0x000002100C789D08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002100C7546A8>]','[<function linear at 0x000002100C789D08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002100C7546A8>]','[<function linear at 0x000002100C789D08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001EE39C48620>]','[<function linear at 0x000001EE39C7AC80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001EE39C48620>]','[<function linear at 0x000001EE39C7AC80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001EE39C48620>]','[<function linear at 0x000001EE39C7AC80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001EE39C48620>]','[<function linear at 0x000001EE39C7AC80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001EE39C48620>]','[<function linear at 0x000001EE39C7AC80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001EE39C48620>]','[<function linear at 0x000001EE39C7AC80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001EE39C48620>]','[<function linear at 0x000001EE39C7AC80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001EE39C48620>]','[<function linear at 0x000001EE39C7AC80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000022E120146A8>]','[<function linear at 0x0000022E1204AD08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000022E120146A8>]','[<function linear at 0x0000022E1204AD08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000022E120146A8>]','[<function linear at 0x0000022E1204AD08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000022E120146A8>]','[<function linear at 0x0000022E1204AD08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x00000281A1427620>]','[<function linear at 0x00000281A1459C80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x00000281A1427620>]','[<function linear at 0x00000281A1459C80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x00000281A1427620>]','[<function linear at 0x00000281A1459C80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x00000281A1427620>]','[<function linear at 0x00000281A1459C80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000025BF2909620>]','[<function linear at 0x0000025BF293AC80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000025BF2909620>]','[<function linear at 0x0000025BF293AC80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000025BF2909620>]','[<function linear at 0x0000025BF293AC80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000025BF2909620>]','[<function linear at 0x0000025BF293AC80>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000022CACDB96A8>]','[<function linear at 0x0000022CACDECD08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000022CACDB96A8>]','[<function linear at 0x0000022CACDECD08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000022CACDB96A8>]','[<function linear at 0x0000022CACDECD08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000022CACDB96A8>]','[<function linear at 0x0000022CACDECD08>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002AE821A42F0>]','[<function linear at 0x000002AE821D0950>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002AE821A42F0>]','[<function linear at 0x000002AE821D0950>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002AE821A42F0>]','[<function linear at 0x000002AE821D0950>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002AE821A42F0>]','[<function linear at 0x000002AE821D0950>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000018ED36D9730>]','[<function linear at 0x0000018ED370FD90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000018ED36D9730>]','[<function linear at 0x0000018ED370FD90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000018ED36D9730>]','[<function linear at 0x0000018ED370FD90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000018ED36D9730>]','[<function linear at 0x0000018ED370FD90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x00000229FDAB9730>]','[<function linear at 0x00000229FDAEFD90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x00000229FDAB9730>]','[<function linear at 0x00000229FDAEFD90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x00000229FDAB9730>]','[<function linear at 0x00000229FDAEFD90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x00000229FDAB9730>]','[<function linear at 0x00000229FDAEFD90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001F701F122F0>]','[<function linear at 0x000001F701F42950>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001F701F122F0>]','[<function linear at 0x000001F701F42950>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001F701F122F0>]','[<function linear at 0x000001F701F42950>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001F701F122F0>]','[<function linear at 0x000001F701F42950>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001D2E3A67730>]','[<function linear at 0x000001D2E3A9DD90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001D2E3A67730>]','[<function linear at 0x000001D2E3A9DD90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001D2E3A67730>]','[<function linear at 0x000001D2E3A9DD90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001D2E3A67730>]','[<function linear at 0x000001D2E3A9DD90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002055B286730>]','[<function linear at 0x000002055B2BED90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002055B286730>]','[<function linear at 0x000002055B2BED90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002055B286730>]','[<function linear at 0x000002055B2BED90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000002055B286730>]','[<function linear at 0x000002055B2BED90>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001999D8417B8>]','[<function linear at 0x000001999D878E18>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001999D8417B8>]','[<function linear at 0x000001999D878E18>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001999D8417B8>]','[<function linear at 0x000001999D878E18>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001999D8417B8>]','[<function linear at 0x000001999D878E18>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001999D8417B8>]','[<function linear at 0x000001999D878E18>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001999D8417B8>]','[<function linear at 0x000001999D878E18>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001999D8417B8>]','[<function linear at 0x000001999D878E18>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001999D8417B8>]','[<function linear at 0x000001999D878E18>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000021FC0DC5840>]','[<function linear at 0x0000021FC0DFFEA0>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000021FC0DC5840>]','[<function linear at 0x0000021FC0DFFEA0>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000021FC0DC5840>]','[<function linear at 0x0000021FC0DFFEA0>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000021FC0DC5840>]','[<function linear at 0x0000021FC0DFFEA0>]',nan
