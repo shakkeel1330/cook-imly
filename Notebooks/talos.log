@@ -498,3 +498,7 @@
 (2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000021FC0DC5840>]','[<function linear at 0x0000021FC0DFFEA0>]',nan
 (2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000021FC0DC5840>]','[<function linear at 0x0000021FC0DFFEA0>]',nan
 (2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x0000021FC0DC5840>]','[<function linear at 0x0000021FC0DFFEA0>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001F9516158C8>]','[<function linear at 0x000001F95164EF28>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001F9516158C8>]','[<function linear at 0x000001F95164EF28>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001F9516158C8>]','[<function linear at 0x000001F95164EF28>]',nan
+(2, 10, 30),[1],[10],[10],[None],'[None]','['nadam']','[<function mean_squared_error at 0x000001F9516158C8>]','[<function linear at 0x000001F95164EF28>]',nan

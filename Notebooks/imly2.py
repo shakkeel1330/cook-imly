@@ -74,11 +74,6 @@ def dope(obj, **kwargs):
         obj = model
         obj.fit = types.MethodType(fit_keras, obj)
         obj.save = types.MethodType(save, obj)
-        # obj.fit = fit_keras
-        # obj.predict = model.predict
-        # obj.score = model.score
-        # obj.save = save
-        # return obj
     return obj
 
 
@@ -94,23 +89,35 @@ def get_model_design(name):
     return function_name
 
 
-def f1():
+# def f1():
+#     model = Sequential()
+#     model.add(Dense(1, input_dim=1, activation='linear'))
+#     model.compile(optimizer='adam', loss='mse', metrics=['mse'])
+#     return model
+
+def f1(**kwargs):
+    p = {
+        'first_neuron': 1,
+        'activation': 'linear',
+        'optimizer': 'adam',
+        'losses': 'mse'
+    }
+    kwargs.setdefault('params', p)
+    kwargs.setdefault('x_train', np.array([[1], [2]]))
+
     model = Sequential()
-    model.add(Dense(1, input_dim=1, activation='linear'))
-    model.compile(optimizer='adam', loss='mse', metrics=['mse'])
+    model.add(Dense(kwargs['params']['first_neuron'],
+                    input_dim=kwargs['x_train'].shape[1],
+                    activation=kwargs['params']['activation']))
+
+    model.compile(optimizer=kwargs['params']['optimizer'],
+                  loss=kwargs['params']['losses'],
+                  metrics=['acc'])
     return model
 
 
-def talos_model(x_train, y_train, x_val, y_val, params):
-
-    model = Sequential()
-    model.add(Dense(params['first_neuron'],
-                    input_dim=x_train.shape[1],
-                    activation=params['activation']))
-
-    model.compile(optimizer=params['optimizer'],
-                  loss=params['losses'],
-                  metrics=['acc'])
+def f1_test(x_train, y_train, x_val, y_val, params):
+    model = f1()
 
     out = model.fit(x_train, y_train,
                     batch_size=params['batch_size'],
@@ -121,7 +128,27 @@ def talos_model(x_train, y_train, x_val, y_val, params):
     return out, model
 
 
-def fit_keras(self, x_train, y_train):
+# def talos_model(x_train, y_train, x_val, y_val, params):
+
+#     model = Sequential()
+#     model.add(Dense(params['first_neuron'],
+#                     input_dim=x_train.shape[1],
+#                     activation=params['activation']))
+
+#     model.compile(optimizer=params['optimizer'],
+#                   loss=params['losses'],
+#                   metrics=['acc'])
+
+#     out = model.fit(x_train, y_train,
+#                     batch_size=params['batch_size'],
+#                     epochs=params['epochs'],
+#                     verbose=0,
+#                     validation_data=[x_val, y_val])
+
+#     return out, model
+
+
+def fit_keras(self, x_train, y_train, **kwargs):
 
     # Hard coding params for the time being. It should ideally be passed
     # as an argument
@@ -141,7 +168,7 @@ def fit_keras(self, x_train, y_train):
                 params=p,
                 dataset_name='first_linear_regression',
                 experiment_no='a',
-                model=talos_model,
+                model=f1_test,
                 grid_downsample=0.5)
 
     best_model = extract_model(h)
