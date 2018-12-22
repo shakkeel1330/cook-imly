@@ -56,6 +56,7 @@ def dope(obj, **kwargs):
     5) compiling right after extractling Talos -- FIXED
         + How to extract the best model's opt and loss?
         + Try load_model by Predict()
+    6) predict by scikit
     '''
     p = {   # use get_params
         'first_neuron': [1],
@@ -79,7 +80,8 @@ def dope(obj, **kwargs):
 
 def get_model_design(name):
     mapping = {
-        'LinearRegression': f1
+        'LinearRegression': f1,
+        'KerasRegressor': f1
     }
 
     for key, value in mapping.items():
@@ -88,12 +90,6 @@ def get_model_design(name):
 
     return function_name
 
-
-# def f1():
-#     model = Sequential()
-#     model.add(Dense(1, input_dim=1, activation='linear'))
-#     model.compile(optimizer='adam', loss='mse', metrics=['mse'])
-#     return model
 
 def f1(**kwargs):
     p = {
@@ -116,9 +112,9 @@ def f1(**kwargs):
     return model
 
 
-def f1_test(x_train, y_train, x_val, y_val, params):
-    model = f1()
-
+def talos_model(x_train, y_train, x_val, y_val, params):
+    build_model = get_model_design(params['model_name'])
+    model = build_model(x_train=x_train, params=params)
     out = model.fit(x_train, y_train,
                     batch_size=params['batch_size'],
                     epochs=params['epochs'],
@@ -126,26 +122,6 @@ def f1_test(x_train, y_train, x_val, y_val, params):
                     validation_data=[x_val, y_val])
 
     return out, model
-
-
-# def talos_model(x_train, y_train, x_val, y_val, params):
-
-#     model = Sequential()
-#     model.add(Dense(params['first_neuron'],
-#                     input_dim=x_train.shape[1],
-#                     activation=params['activation']))
-
-#     model.compile(optimizer=params['optimizer'],
-#                   loss=params['losses'],
-#                   metrics=['acc'])
-
-#     out = model.fit(x_train, y_train,
-#                     batch_size=params['batch_size'],
-#                     epochs=params['epochs'],
-#                     verbose=0,
-#                     validation_data=[x_val, y_val])
-
-#     return out, model
 
 
 def fit_keras(self, x_train, y_train, **kwargs):
@@ -163,19 +139,18 @@ def fit_keras(self, x_train, y_train, **kwargs):
          'losses': [mse],
          'activation': [linear]
          }
+    kwargs.setdefault('params', p)
+    kwargs['params']['model_name'] = [self.__class__.__name__]
 
     h = ta.Scan(x_train, y_train,
-                params=p,
+                params=kwargs['params'],
                 dataset_name='first_linear_regression',
                 experiment_no='a',
-                model=f1_test,
+                model=talos_model,
                 grid_downsample=0.5)
 
     best_model = extract_model(h)
     best_model.compile(optimizer='adam', loss='mse', metrics=['mse'])
-    # best_model.fit(x_train,y_train)
-    # regressor_model = KerasRegressor(build_fn=best_model,epochs=10, batch_size=10, verbose=0)
-    # self.model = regressor_model
     self.model = best_model
     # To delete the zip file that was created by Talos
     os.remove('./linear_regression_firstDataset.zip')
