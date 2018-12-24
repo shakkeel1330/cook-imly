@@ -37,14 +37,12 @@ from keras.activations import linear
 from keras.wrappers.scikit_learn import KerasRegressor
 import talos as ta
 
-import os
-import json
-import zipfile
-import shutil
+import os, json, zipfile, shutil
 from keras.models import model_from_json
 import onnxmltools
-from talos import Deploy
+from talos import Deploy, Predict, Reporting
 import types
+from sklearn.linear_model import LogisticRegression
 
 
 def dope(obj, **kwargs):
@@ -57,17 +55,11 @@ def dope(obj, **kwargs):
         + How to extract the best model's opt and loss?
         + Try load_model by Predict()
     6) predict by scikit
+    7) Consider using 'marshal' to load f1() as a json file
     '''
-    p = {   # use get_params
-        'first_neuron': [1],
-        'optimizer': ['SGD', 'nadam'],
-        'losses': [mse],
-        'activation': [linear]
-    }
+
     kwargs.setdefault('using', 'dnn')
-    kwargs.setdefault('params', p)
     if kwargs['using'] == 'dnn':
-        p = kwargs['params']  # use set_params()
         name = obj.__class__.__name__
         create_model = get_model_design(name)
         model = KerasRegressor(build_fn=create_model,
@@ -124,14 +116,14 @@ def talos_model(x_train, y_train, x_val, y_val, params):
     return out, model
 
 
-def fit_keras(self, x_train, y_train, **kwargs):
-
+def fit_keras(self, x_train, y_train, x_test, **kwargs):
+    np.random.seed(7)
     # Hard coding params for the time being. It should ideally be passed
     # as an argument
 
     p = {'lr': (2, 10, 30),
-         'first_neuron': [1],
-         'batch_size': [10],
+         'first_neuron': [1], # first_neuron is the keyword used by Talos.
+         'batch_size': [10],  #  So, leaving it like that for the time being
          'epochs': [10],
          'weight_regulizer': [None],
          'emb_output_dims': [None],
@@ -142,15 +134,23 @@ def fit_keras(self, x_train, y_train, **kwargs):
     kwargs.setdefault('params', p)
     kwargs['params']['model_name'] = [self.__class__.__name__]
 
-    h = ta.Scan(x_train, y_train,
+    logisticRegr = LogisticRegression()
+    logisticRegr.fit(x_train, y_train)
+    y_pred = logisticRegr.predict(x_test)
+
+    h = ta.Scan(x_test, y_pred,
                 params=kwargs['params'],
                 dataset_name='first_linear_regression',
                 experiment_no='a',
                 model=talos_model,
                 grid_downsample=0.5)
 
+    # talos_p = Predict(h)
+    # r = Reporting('first_linear_regression_a.csv')
+    # model_id = r.best_model(metric='val_loss')
+    # best_model = talos_p.load_model(model_id)
     best_model = extract_model(h)
-    best_model.compile(optimizer='adam', loss='mse', metrics=['mse'])
+    best_model.compile(optimizer='nadam', loss='mse', metrics=['mse'])
     self.model = best_model
     # To delete the zip file that was created by Talos
     os.remove('./linear_regression_firstDataset.zip')
