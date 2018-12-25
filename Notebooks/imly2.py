@@ -37,12 +37,13 @@ from keras.activations import linear
 from keras.wrappers.scikit_learn import KerasRegressor
 import talos as ta
 
-import os, json, zipfile, shutil
+import os, json, zipfile, shutil, copy
 from keras.models import model_from_json
 import onnxmltools
 from talos import Deploy, Predict, Reporting
 import types
-from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LinearRegression
+from talos.utils.best_model import best_model, activate_model
 
 
 def dope(obj, **kwargs):
@@ -60,11 +61,13 @@ def dope(obj, **kwargs):
 
     kwargs.setdefault('using', 'dnn')
     if kwargs['using'] == 'dnn':
+        primal_model = copy.deepcopy(obj)
         name = obj.__class__.__name__
         create_model = get_model_design(name)
         model = KerasRegressor(build_fn=create_model,
                                epochs=10, batch_size=10, verbose=0)
         obj = model
+        obj.primal = primal_model
         obj.fit = types.MethodType(fit_keras, obj)
         obj.save = types.MethodType(save, obj)
     return obj
@@ -134,9 +137,9 @@ def fit_keras(self, x_train, y_train, x_test, **kwargs):
     kwargs.setdefault('params', p)
     kwargs['params']['model_name'] = [self.__class__.__name__]
 
-    logisticRegr = LogisticRegression()
-    logisticRegr.fit(x_train, y_train)
-    y_pred = logisticRegr.predict(x_test)
+    primal_model = self.primal
+    primal_model.fit(x_train, y_train)
+    y_pred = primal_model.predict(x_test)
 
     h = ta.Scan(x_test, y_pred,
                 params=kwargs['params'],
@@ -145,44 +148,16 @@ def fit_keras(self, x_train, y_train, x_test, **kwargs):
                 model=talos_model,
                 grid_downsample=0.5)
 
-    # talos_p = Predict(h)
-    # r = Reporting('first_linear_regression_a.csv')
-    # model_id = r.best_model(metric='val_loss')
-    # best_model = talos_p.load_model(model_id)
-    best_model = extract_model(h)
-    best_model.compile(optimizer='nadam', loss='mse', metrics=['mse'])
-    self.model = best_model
-    # To delete the zip file that was created by Talos
-    os.remove('./linear_regression_firstDataset.zip')
+    model_id = best_model(h, metric='val_loss', asc=True)
+    dnn_model = activate_model(h, model_id)
+    dnn_model.compile(optimizer='nadam', loss='mse', metrics=['mse'])
+    self.model = dnn_model
     return self.model.fit(x_train, y_train)
 
     # Avoid using weights
     # Re write the whole object as a new keras regressor object while the user calls m.fit()
     # KerasRegressor's build_fn required a function or an instance of a class as an argument. Hence the above
     # approach wasn't working(what we have is a keras model - the best_model object)
-
-
-def extract_model(scan_object):
-    Deploy(scan_object, 'linear_regression_firstDataset', metric='val_loss')
-    archive = zipfile.ZipFile('linear_regression_firstDataset.zip', 'r')
-    model_file = archive.open('linear_regression_firstDataset_model.json')
-    weight_file = archive.open('linear_regression_firstDataset_model.h5')
-
-    with zipfile.ZipFile('linear_regression_firstDataset.zip', 'r') as zip_ref:
-        zip_ref.extractall('./linear_regression_firstDataset_unzip')
-
-    # json_file = open('model.json', 'r')
-    loaded_model_json = model_file.read()
-
-    # json_file.close()
-    loaded_model = model_from_json(loaded_model_json)
-    # load weights into new model
-    loaded_model.load_weights(
-        "./linear_regression_firstDataset_unzip/linear_regression_firstDataset_model.h5")
-
-    shutil.rmtree('./linear_regression_firstDataset_unzip')
-    print("Loaded model from disk")
-    return loaded_model
 
 
 def save(self, using='dnn'):
