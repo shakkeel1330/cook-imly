@@ -1,0 +1,10 @@
+{"params" : {"lr": [2, 10, 30],
+    "first_neuron": [1],
+    "batch_size": [10],
+    "epochs": [10],    
+    "weight_regulizer": ["None"], 
+    "emb_output_dims": ["None"],
+    "optimizer": ["nadam"],
+    "losses": ["mse"],
+    "activation": ["linear"]
+    }}
