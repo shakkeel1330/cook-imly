@@ -3,7 +3,7 @@ import copy
 import onnxmltools
 import types
 from utils.model_mapping import get_model_design
-from wrappers.talos.talos import talos_optimization
+from wrappers.sklearn.sklearn_keras_regressor.keras_regressor import SklearnKerasRegressor
 from keras.wrappers.scikit_learn import KerasRegressor
 
 
@@ -13,34 +13,36 @@ def dope(obj, **kwargs):
         primal_model = copy.deepcopy(obj)
         name = obj.__class__.__name__
         create_model = get_model_design(name)
-        model = KerasRegressor(build_fn=create_model, #Create a Keras wrapper and move this out
-                               epochs=10, batch_size=10, verbose=0)
-        obj = model
-        obj.primal = primal_model
-        obj.fit = types.MethodType(fit_best, obj) # Move to arch/package-name
-        obj.save = types.MethodType(save, obj)
-    return obj
+        model = SklearnKerasRegressor(build_fn=create_model,
+                                      epochs=10, batch_size=10,
+                                      verbose=0, obj=obj)
+        # obj = model
+        # obj.primal = primal_model
+        # obj.fit = types.MethodType(fit_best, obj) # Move to arch/package-name
+        # obj.save = types.MethodType(save, obj)
+    return model
 
 
-def fit_best(self, x_train, y_train, **kwargs):
-    kwargs['params']['model_name'] = [self.__class__.__name__]
+# def fit_best(self, x_train, y_train, **kwargs):
+#     # kwargs.setdefault('model_name', self.__class__.__name__)
 
-    primal_model = self.primal
-    primal_model.fit(x_train, y_train)
-    y_pred = primal_model.predict(x_train)
-    kwargs['params']['y_pred'] = y_pred
+#     primal_model = self.primal
+#     primal_model.fit(x_train, y_train)
+#     y_pred = primal_model.predict(x_train)
+#     kwargs['y_pred'] = y_pred
+#     kwargs['model_name'] = self.__class__.__name__
 
-    self.model = talos_optimization(x_train, y_train, kwargs)
-    return self.model.fit(x_train, y_train)
+#     self.model = talos_optimization(x_train, y_train, kwargs)
+#     return self.model.fit(x_train, y_train)
 
 
-def save(self, using='dnn'):
-    if using == 'sklearn':
-        filename = 'scikit_model'
-        pickle.dump(self.model, open(filename, 'wb'))
-    else:
-        onnx_model = onnxmltools.convert_keras(self.model)
-        return onnx_model
+# def save(self, using='dnn'):
+#     if using == 'sklearn':
+#         filename = 'scikit_model'
+#         pickle.dump(self.model, open(filename, 'wb'))
+#     else:
+#         onnx_model = onnxmltools.convert_keras(self.model)
+#         return onnx_model
 
 
 ''' Notes -

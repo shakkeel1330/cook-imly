@@ -1,16 +1,13 @@
 from keras.models import Sequential
-from keras.layers.core import Dense, Activation
+from keras.layers.core import Dense
 import numpy as np
+import json
 
 
 def f1(**kwargs):
-    p = {
-        'first_neuron': 1,
-        'activation': 'linear',
-        'optimizer': 'adam',
-        'losses': 'mse'
-    }
-    kwargs.setdefault('params', p)
+    params_json = json.load(open('./params.json')) #IMP - Change
+    params = params_json['params']
+    kwargs.setdefault('params', params)
     kwargs.setdefault('x_train', np.array([[1], [2]]))
 
     model = Sequential()

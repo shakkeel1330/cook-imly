@@ -1,0 +1,8 @@
+{
+    "params": {
+        "first_neuron": 1,
+        "activation": "linear",
+        "optimizer": "adam",
+        "losses": "mse"
+    }
+}
