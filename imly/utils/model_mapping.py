@@ -5,7 +5,7 @@ def get_model_design(name):
     function_name = None
     mapping = {
         'LinearRegression': f1,
-        'KerasRegressor': f1
+        'SklearnKerasRegressor': f1
     }
 
     for key, value in mapping.items():

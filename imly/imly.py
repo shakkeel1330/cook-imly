@@ -16,44 +16,4 @@ def dope(obj, **kwargs):
         model = SklearnKerasRegressor(build_fn=create_model,
                                       epochs=10, batch_size=10,
                                       verbose=0, obj=obj)
-        # obj = model
-        # obj.primal = primal_model
-        # obj.fit = types.MethodType(fit_best, obj) # Move to arch/package-name
-        # obj.save = types.MethodType(save, obj)
     return model
-
-
-# def fit_best(self, x_train, y_train, **kwargs):
-#     # kwargs.setdefault('model_name', self.__class__.__name__)
-
-#     primal_model = self.primal
-#     primal_model.fit(x_train, y_train)
-#     y_pred = primal_model.predict(x_train)
-#     kwargs['y_pred'] = y_pred
-#     kwargs['model_name'] = self.__class__.__name__
-
-#     self.model = talos_optimization(x_train, y_train, kwargs)
-#     return self.model.fit(x_train, y_train)
-
-
-# def save(self, using='dnn'):
-#     if using == 'sklearn':
-#         filename = 'scikit_model'
-#         pickle.dump(self.model, open(filename, 'wb'))
-#     else:
-#         onnx_model = onnxmltools.convert_keras(self.model)
-#         return onnx_model
-
-
-''' Notes -
-
-Things to move out of imly
-1) Keras Regressor and it's extension methods
-2) get_model_design() to utils
-3) f1() and p values
-4) talos methods - fit_keras() and talos_model()
-    + Params JSON - Rectify the values(None,tuples etc)
-5) save() goes with keras regressor
-
-'''
-

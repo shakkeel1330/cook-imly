@@ -1,6 +1,6 @@
 {
   "params": {
-    "KerasRegressor": {
+    "SklearnKerasRegressor": {
       "config": {
         "lr": [
           2,

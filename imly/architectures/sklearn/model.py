@@ -3,9 +3,9 @@ from keras.layers.core import Dense
 import numpy as np
 import json
 
-
+ 
 def f1(**kwargs):
-    params_json = json.load(open('./params.json')) #IMP - Change
+    params_json = json.load(open('../imly/architectures/sklearn/params.json')) #IMP - Change
     params = params_json['params']
     kwargs.setdefault('params', params)
     kwargs.setdefault('x_train', np.array([[1], [2]]))

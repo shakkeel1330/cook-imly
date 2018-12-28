@@ -3,16 +3,12 @@ from wrappers.talos.talos import talos_optimization
 import pickle, onnxmltools
 
 
-class SklearnKerasRegressor(KerasRegressor.BaseWrapper):
-        def __init__(self, obj):
-            # KerasRegressor.__init__(self, build_fn=None)
-            # BaseWrapper.__init__(self, build_fn=None)
-            super().__init__()
-            self.primal = obj
+class SklearnKerasRegressor(KerasRegressor):
+        def __init__(self, build_fn, **kwargs):
+            super(KerasRegressor, self).__init__(build_fn=build_fn) # Passing **skparams pending
+            self.primal = kwargs['obj']
 
         def fit(self, x_train, y_train, **kwargs):
-        # kwargs.setdefault('model_name', self.__class__.__name__)
-
             primal_model = self.primal
             primal_model.fit(x_train, y_train)
             y_pred = primal_model.predict(x_train)
