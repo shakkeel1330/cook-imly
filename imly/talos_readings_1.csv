@@ -1,2 +1,2 @@
 round_epochs,val_loss,val_acc,loss,acc,lr,first_neuron,batch_size,epochs,weight_regulizer,emb_output_dims,optimizer,losses,activation,model_name
-10,24608.570527805117,0.0,25658.14787473517,0.0,30,1,10,10,None,None,nadam,<function mean_squared_error at 0x000002CCBD2942F0>,<function linear at 0x000002CCBD2BF950>,SklearnKerasRegressor
+10,24608.570527805117,0.0,25658.14787473517,0.0,30,1,10,10,None,None,nadam,<function mean_squared_error at 0x000001B19AA42950>,<function linear at 0x000001B19AA87048>,SklearnKerasRegressor

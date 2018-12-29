@@ -6,7 +6,7 @@ import pickle, onnxmltools
 class SklearnKerasRegressor(KerasRegressor):
         def __init__(self, build_fn, **kwargs):
             super(KerasRegressor, self).__init__(build_fn=build_fn) # Passing **skparams pending
-            self.primal = kwargs['obj']
+            self.primal = kwargs['primal']
 
         def fit(self, x_train, y_train, **kwargs):
             primal_model = self.primal
