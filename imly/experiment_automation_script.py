@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 # from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
+from sklearn.metrics import mean_squared_error
 from imly import dope
 import copy
 
@@ -246,23 +247,26 @@ def dopify(dataset_info, model_name, X, Y, test_size):
     imported_module = getattr(module, name)
     model = imported_module
     model_instance = model()
+    base_model = copy.deepcopy(model_instance)
     primal_model = copy.deepcopy(model_instance)
 
     # Primal
     primal_model.fit(x_train, y_train)
     y_pred = primal_model.predict(x_train)
-    primal_score = primal_model.score(x_test, y_test)
+    # primal_score = primal_model.score(x_test, y_test)
+    primal_score = mean_squared_error(y_train, y_pred)
     primal_params = primal_model.get_params(deep=True)
-    primal_score = str(round(primal_score * 100, 2))
+    # primal_score = round(primal_score * 100, 2)
 
     # Keras 
-    m = dope(model)
+    x_train = x_train.values  # Talos accepts only numpy arrays
+    m = dope(base_model)
     m.fit(x_train, y_train)
-    keras_score = m.evaluate(x_test, y_test)
-    keras_score = str(round(keras_score[1] * 100, 2))
+    keras_score = m.score(x_test, y_test)
+    # keras_score = round(keras_score * 100, 2)
 
     # Prepare Keras configuration #
-    keras_params = m.get_config()
+    keras_params = m.__dict__['model'].get_config()
     keras_params = keras_params['layers'][0]['config']
     keras_params['kernel_initializer'] = keras_params['kernel_initializer']['class_name']
     keras_params['bias_initializer'] = keras_params['bias_initializer']['class_name']

@@ -5,7 +5,7 @@ import json
 
  
 def f1(**kwargs):
-    params_json = json.load(open('../imly/architectures/sklearn/params.json')) #IMP - Change
+    params_json = json.load(open('../imly/architectures/sklearn/params.json'))
     params = params_json['params']
     kwargs.setdefault('params', params)
     kwargs.setdefault('x_train', np.array([[1], [2]]))
