@@ -5,7 +5,9 @@ import copy
 
 
 def dope(model, **kwargs):
+    # params = 
     kwargs.setdefault('using', 'dnn')
+    # kwargs.setdefault('params', params)
     if kwargs['using'] == 'dnn':
         primal = copy.deepcopy(model)
         name = model.__class__.__name__
@@ -15,3 +17,16 @@ def dope(model, **kwargs):
                                verbose=0, primal=primal)
 
     return model
+
+
+# kwargs changes
+# multi-layer solution
+
+''' Changes
+[X] kwargs - Access to params for the user
+[X] Rename talos_optimization()
+[X] Accessing model_name
+[X] Get rid of best_model
+[X] Move Talos to imly/optimizer
+[] try/catch
+[] Generalization of model structure using ONNX

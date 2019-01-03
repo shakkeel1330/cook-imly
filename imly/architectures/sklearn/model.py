@@ -19,3 +19,5 @@ def f1(**kwargs):
                   loss=kwargs['params']['losses'],
                   metrics=['acc'])
     return model
+
+# try catch

@@ -1,5 +1,5 @@
 from keras.wrappers.scikit_learn import KerasRegressor
-from wrappers.talos.talos import talos_optimization
+from optimizers.talos.talos import get_best_model
 import pickle, onnxmltools
 
 
@@ -15,8 +15,9 @@ class SklearnKerasRegressor(KerasRegressor):
             kwargs['y_pred'] = y_pred
             kwargs['model_name'] = self.__class__.__name__
 
-            self.model = talos_optimization(x_train, y_train, kwargs)
-            return self.model.fit(x_train, y_train)
+            self.model = get_best_model(x_train, y_train, kwargs) # get_best_model - rename
+            self.model.fit(x_train, y_train)
+            return self.model
 
         def save(self, using='dnn'):
             if using == 'sklearn':

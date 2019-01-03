@@ -9,6 +9,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import mean_squared_error
 from imly import dope
 import copy
+from winmltools import convert_keras
 
 model_mappings = {
     'linear_regression': 'LinearRegression',
@@ -144,7 +145,7 @@ def write_to_mastersheet(data,X,Y,accuracy_values):
     unique,count = np.unique(Y,return_counts=True)
     class1=count[0]/X.shape[0]*100
     class2=count[1]/X.shape[0]*100
-    class_distribution = str(int(round(class1))) + " : " + str(int(round(class2)))
+    class_distribution = round(class1, 2)
 
     for param,col_nb in params_dict.items():
         for s_param,value in scikit_params.items():
