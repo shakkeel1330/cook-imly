@@ -1,8 +1,11 @@
 {
     "params": {
-        "first_neuron": 1,
-        "activation": "linear",
-        "optimizer": "adam",
-        "losses": "mae"
+        "glm_1": {
+            "first_neuron": 1,
+            "activation": "linear",
+            "optimizer": "adam",
+            "losses": "mae"
+        },
+        "glm_2": {}
     }
 }

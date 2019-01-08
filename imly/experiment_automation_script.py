@@ -8,7 +8,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 from sklearn.metrics import mean_squared_error
 from imly import dope
-import copy
+import copy, json
 from winmltools import convert_keras
 
 model_mappings = {
@@ -147,22 +147,27 @@ def write_to_mastersheet(data,X,Y,accuracy_values):
     class2=count[1]/X.shape[0]*100
     class_distribution = round(class1, 2)
 
-    for param,col_nb in params_dict.items():
-        for s_param,value in scikit_params.items():
-            if param == s_param:
-                if value == None:
-                    value = 'None'
-                col_nb = worksheet.find(s_param).col
-                worksheet.update_cell(row_nb+1, col_nb, value)
+    # for param,col_nb in params_dict.items():
+    #     for s_param,value in scikit_params.items():
+    #         if param == s_param:
+    #             if value == None:
+    #                 value = 'None'
+    #             col_nb = worksheet.find(s_param).col
+    #             worksheet.update_cell(row_nb+1, col_nb, value)
+    col_nb = worksheet.find('scikit_json').col
+    worksheet.update_cell(row_nb+1, col_nb, scikit_params)
             
 
-    for param,col_nb in params_dict.items():
-        for k_param,value in keras_params.items():
-            if param == k_param:
-                if value == None:
-                    value = 'None'
-                col_nb = worksheet.find(k_param).col
-                worksheet.update_cell(row_nb+1, col_nb, value)
+    # for param,col_nb in params_dict.items():
+    #     for k_param,value in keras_params.items():
+    #         if param == k_param:
+    #             if value == None:
+    #                 value = 'None'
+    #             col_nb = worksheet.find(k_param).col
+    #             worksheet.update_cell(row_nb+1, col_nb, value)
+
+    col_nb = worksheet.find('keras_json').col
+    worksheet.update_cell(row_nb+1, col_nb, keras_params)
 
     worksheet.update_cell(row_nb+1, n_col_nb, n)
     worksheet.update_cell(row_nb+1, p_col_nb, p)
@@ -272,8 +277,8 @@ def dopify(dataset_info, model_name, X, Y, test_size):
     keras_params['kernel_initializer'] = keras_params['kernel_initializer']['class_name']
     keras_params['bias_initializer'] = keras_params['bias_initializer']['class_name']
 
-    dataset_info['scikit_params'] = primal_params
-    dataset_info['keras_params'] = keras_params
+    dataset_info['scikit_params'] = json.dumps(primal_params)
+    dataset_info['keras_params'] = json.dumps(keras_params)
     dataset_info['type'] = 'Binary'
     accuracy_values = {
         'keras': keras_score,

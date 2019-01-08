@@ -3,7 +3,7 @@ from optimizers.talos.talos import get_best_model
 import pickle, onnxmltools
 
 
-class SklearnKerasRegressor(KerasRegressor):
+class SklearnKerasRegressor(KerasRegressor): # Remove sklearn -> sklearn_regressor flow
         def __init__(self, build_fn, **kwargs):
             super(KerasRegressor, self).__init__(build_fn=build_fn)
             self.primal = kwargs['primal']

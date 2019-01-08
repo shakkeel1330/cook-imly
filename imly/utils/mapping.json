@@ -1,0 +1,10 @@
+{
+    "LinearRegression": {
+        "model": "glm",
+        "param": "glm_1"
+    },
+    "SklearnKerasRegressor": {
+        "model": "glm",
+        "param": "glm_1"
+    }
+}
