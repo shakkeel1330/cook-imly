@@ -3,8 +3,8 @@
         "model": "glm",
         "param": "glm_1"
     },
-    "SklearnKerasRegressor": {
+    "LogisticRegression": {
         "model": "glm",
-        "param": "glm_1"
+        "param": "log_reg"
     }
 }

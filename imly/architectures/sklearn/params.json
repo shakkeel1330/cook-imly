@@ -6,6 +6,12 @@
             "optimizer": "adam",
             "losses": "mae"
         },
-        "glm_2": {}
+        "glm_2": {},
+        "log_reg": {
+            "first_neuron": 1,
+            "activation": "sigmoid",
+            "optimizer": "adam",
+            "losses": "binary_crossentropy"
+        }
     }
 }

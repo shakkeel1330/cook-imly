@@ -16,7 +16,7 @@ class SklearnKerasRegressor(KerasRegressor): # Remove sklearn -> sklearn_regress
             y_pred = primal_model.predict(x_train)
             primal_data = {
                 'y_pred': y_pred,
-                'model_name': self.__class__.__name__
+                'model_name': primal_model.__class__.__name__
             }
             # kwargs['y_pred'] = y_pred
             # kwargs['model_name'] = self.__class__.__name__

@@ -32,7 +32,7 @@ def load_sheet():
     return worksheet
 
 
-def get_url(dataset_name):
+def get_dataset_info(dataset_name):
     worksheet = load_sheet()
 
     dataset_list = worksheet.col_values(worksheet.find("Name").col)

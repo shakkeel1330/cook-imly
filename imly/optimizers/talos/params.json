@@ -34,6 +34,40 @@
         ]
       },
       "performance_metric": "val_loss"
+    },
+    "LogisticRegression": {
+      "config": {
+        "lr": [
+          2,
+          10,
+          30
+        ],
+        "first_neuron": [
+          1
+        ],
+        "batch_size": [
+          10
+        ],
+        "epochs": [
+          10
+        ],
+        "weight_regulizer": [
+          null
+        ],
+        "emb_output_dims": [
+          null
+        ],
+        "optimizer": [
+          "adam"
+        ],
+        "losses": [
+          "binary_crossentropy"
+        ],
+        "activation": [
+          "sigmoid"
+        ]
+      },
+      "performance_metric": "val_acc"
     }
   }
 }

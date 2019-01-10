@@ -1,4 +1,2 @@
 round_epochs,val_loss,val_acc,loss,acc,lr,first_neuron,batch_size,epochs,weight_regulizer,emb_output_dims,optimizer,losses,activation,model_name
-10,26815.174307193396,0.0,26948.71046112805,0.0,2,1,10,10,None,None,nadam,mse,linear,SklearnKerasRegressor
-10,153.2295555258697,0.0,151.3935685816819,0.0,30,1,10,10,None,None,nadam,mae,linear,SklearnKerasRegressor
-10,153.23214577728848,0.0,151.39039884737838,0.0,10,1,10,10,None,None,nadam,mae,linear,SklearnKerasRegressor
+10,0.33443748628450787,0.9187279084545985,0.08524241830419862,0.9833333293596903,30,1,10,10,None,None,adam,binary_crossentropy,sigmoid,LogisticRegression
