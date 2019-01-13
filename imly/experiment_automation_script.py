@@ -259,8 +259,10 @@ def dopify(dataset_info, model_name, X, Y, test_size):
     # Primal
     primal_model.fit(x_train, y_train)
     y_pred = primal_model.predict(x_train)
-    # primal_score = primal_model.score(x_test, y_test)
-    primal_score = mean_squared_error(y_train, y_pred)
+    if (primal_model.__class__.__name__ == 'LogisticRegression'):
+        primal_score = primal_model.score(x_test, y_test)
+    else:
+        primal_score = mean_squared_error(y_train, y_pred)
     primal_params = primal_model.get_params(deep=True)
     # primal_score = round(primal_score * 100, 2)
 

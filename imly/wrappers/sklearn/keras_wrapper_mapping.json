@@ -1,0 +1,4 @@
+{
+    "LogisticRegression": "KerasClassifier",
+    "LinearRegression": "KerasRegressor"
+}
