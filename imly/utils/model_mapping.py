@@ -6,11 +6,11 @@ def get_model_design(name):
     mapping_data = json.load(open('../imly/utils/mapping.json'))
 
     try:
-        function_name = mapping_data[name]['model']
+        fn_name = mapping_data[name]['model']
         param_name = mapping_data[name]['param']
-        module = __import__('architectures.sklearn.model',
-                            fromlist=[function_name])
-        function = getattr(module, function_name)
+        # module = __import__('architectures.sklearn.model',
+        #                     fromlist=[function_name])
+        # function = getattr(module, function_name)
     except KeyError:
         print('Invalid model name passed to mapping_data')
 
@@ -18,7 +18,7 @@ def get_model_design(name):
     #     if key == name:
     #         function_name = value
 
-    return function, param_name
+    return fn_name, param_name
 
 
 # Pass params combination as well. f1 to glm

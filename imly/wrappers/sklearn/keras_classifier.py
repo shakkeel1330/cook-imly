@@ -5,7 +5,7 @@ import pickle, onnxmltools
 
 class SklearnKerasClassifier(KerasClassifier):
         def __init__(self, build_fn, **kwargs):
-            super(KerasClassifier, self).__init__(build_fn=build_fn)
+            super(KerasClassifier, self).__init__(build_fn=build_fn, epochs=kwargs['epochs'])
             self.primal = kwargs['primal']
             self.params = kwargs['params']
             self.performance_metric = kwargs['performance_metric']
@@ -23,8 +23,10 @@ class SklearnKerasClassifier(KerasClassifier):
             self.model = get_best_model(x_train, y_train, primal_data=primal_data, params=self.params, 
                                         performance_metric=self.performance_metric) 
             # self.model.fit(x_train, y_train)
-            super(KerasClassifier, self).fit(x_train, y_train) # Why? - 'classes_' missing
-            return self.model
+
+            # super(SklearnKerasClassifier, self).fit(x_train, y_train) # Why? - 'classes_' missing
+            # return self.model
+            return super(SklearnKerasClassifier, self).fit(x_train, y_train) # What's the difference between return self.model and this
 
         def save(self, using='dnn'):
             if using == 'sklearn':

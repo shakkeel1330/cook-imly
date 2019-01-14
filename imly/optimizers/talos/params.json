@@ -33,7 +33,7 @@
           "linear"
         ]
       },
-      "performance_metric": "val_loss"
+      "performance_metric": "val_acc"
     },
     "LogisticRegression": {
       "config": {
