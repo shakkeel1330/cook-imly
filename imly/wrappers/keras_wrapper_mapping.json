@@ -1,0 +1,4 @@
+{
+    "SklearnKerasClassifier":["LogisticRegression"],
+    "SklearnKerasRegressor":["LinearRegression"]
+}

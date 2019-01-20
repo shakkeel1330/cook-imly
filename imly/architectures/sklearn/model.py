@@ -8,6 +8,7 @@ class create_model:
     def __init__(self, fn_name, param_name, **kwargs):
         self.fn_name = fn_name
         self.param_name = param_name
+        self.x_train = None
 
     def __call__(self, **kwargs):
         try:
@@ -18,34 +19,26 @@ class create_model:
             print('Invalid model name passed to mapping_data')
 
         try:
-            model = function(param_name=self.param_name, x_train=kwargs['x_train'])
-            print('From try -- ', function)
+            model = function(param_name=self.param_name, 
+                             x_train=kwargs['x_train'])
         except KeyError:
-            model = function(param_name=self.param_name)
-            print('From except -- ', function)
-
-        return model
+            model = function(param_name=self.param_name, x_train=self.x_train) # Error handling missing. What happens if the user 
+        return model                                                           # sends w/o setting x_train of the object?
 
 
 def glm(**kwargs):  # Should param_name be optional or mandatory?
 
-    # kwargs.setdefault('param_name', 'glm_1')
-
-    params_json = json.load(open('../imly/architectures/sklearn/params.json')) # Remove and make it generic
+    params_json = json.load(open('../imly/architectures/sklearn/params.json'))  # Remove and make it generic
     params = params_json['params'][kwargs['param_name']]
 
     kwargs.setdefault('params', params)
-    kwargs.setdefault('x_train', 10) # FIX!
 
     model = Sequential()
-    model.add(Dense(kwargs['params']['first_neuron'],  # Change first_neuron to input_size
-                    input_dim=10,  # Find a better way to pass input_dim. Through params maybe?
+    model.add(Dense(kwargs['params']['units'],
+                    input_dim=kwargs['x_train'].shape[1],
                     activation=kwargs['params']['activation']))
 
     model.compile(optimizer=kwargs['params']['optimizer'],
-                loss=kwargs['params']['losses'],
-                metrics=["accuracy"])  # Dealing with accuracy in regression models
-    
-    print(model)
+                  loss=kwargs['params']['losses'])
 
     return model

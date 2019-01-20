@@ -1,14 +1,14 @@
 {
     "params": {
         "glm_1": {
-            "first_neuron": 1,
+            "units": 1,
             "activation": "linear",
             "optimizer": "adam",
-            "losses": "mae"
+            "losses": "mse"
         },
         "glm_2": {},
         "log_reg": {
-            "first_neuron": 1,
+            "units": 1,
             "activation": "sigmoid",
             "optimizer": "adam",
             "losses": "binary_crossentropy"

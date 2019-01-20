@@ -7,14 +7,14 @@
           10,
           30
         ],
-        "first_neuron": [
+        "units": [
           1
         ],
         "batch_size": [
           10
         ],
         "epochs": [
-          10
+          100
         ],
         "weight_regulizer": [
           null
@@ -26,14 +26,14 @@
           "nadam"
         ],
         "losses": [
-          "mae",
           "mse"
         ],
         "activation": [
           "linear"
         ]
       },
-      "performance_metric": "val_acc"
+      "val_metric": "val_loss",
+      "metric": "mse"
     },
     "LogisticRegression": {
       "config": {
@@ -42,7 +42,7 @@
           10,
           30
         ],
-        "first_neuron": [
+        "units": [
           1
         ],
         "batch_size": [
@@ -67,7 +67,8 @@
           "sigmoid"
         ]
       },
-      "performance_metric": "val_acc"
+      "val_metric": "val_loss",
+      "metric": "accuracy"
     }
   }
 }

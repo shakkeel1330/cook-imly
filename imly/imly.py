@@ -1,12 +1,6 @@
 from utils.model_mapping import get_model_design
-from wrappers.sklearn.keras_regressor import SklearnKerasRegressor
-from wrappers.sklearn.keras_classifier import SklearnKerasClassifier
 from architectures.sklearn.model import create_model
-
-from keras.models import Sequential
-from keras.layers.core import Dense
-
-import copy, json
+import copy, json, re
 
 
 def dope(model, **kwargs):
@@ -17,29 +11,35 @@ def dope(model, **kwargs):
     kwargs.setdefault('params', params)
     search_params = {**params, **kwargs['params']}
 
-    kwargs.setdefault('performance_metric', params_json['params'][model_name]['performance_metric'])
+    wrapper_mapping_json = json.load(open('../imly/wrappers/keras_wrapper_mapping.json'))
+    for key, value in wrapper_mapping_json.items():
+        for name in value:
+            if model_name == name:
+                wrapper_class = key
+
+    path = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', wrapper_class)
+    module_path = re.sub('([a-z0-9])([A-Z])', r'\1_\2', path).lower()
+    package_name = module_path.split('_')[0]
+    wrapper_name = '_'.join(module_path.split('_')[1:3])
+
+    module_path = 'wrappers.' + package_name + '.' + wrapper_name
+    wrapper_module = __import__(module_path, fromlist=[wrapper_class])
+    wrapper_class = getattr(wrapper_module, wrapper_class)
+
+    kwargs.setdefault('val_metric', params_json['params'][model_name]['val_metric'])  # val_metric -- to sort best model from Talos
+    kwargs.setdefault('metric', params_json['params'][model_name]['metric'])  # metric -- to be passed while final model is compiled
 
     if kwargs['using'] == 'dnn':
         primal = copy.deepcopy(model)
 
-        fn_name, param_name = get_model_design(model_name)  # Should retrun fn_name and not the actual function
+        fn_name, param_name = get_model_design(model_name)
 
         build_fn = create_model(fn_name, param_name)
 
-        # create_model = model_function(param_name=param_name)
-
-        if model.__class__.__name__ == "LogisticRegression":
-            model = SklearnKerasClassifier(build_fn=build_fn,
-                                        epochs=10, batch_size=10,
-                                        verbose=0, primal=primal,
-                                        params=search_params,
-                                        performance_metric=kwargs['performance_metric'])
-        else:
-            model = SklearnKerasRegressor(build_fn=create_model,
-                                            epochs=10, batch_size=10,
-                                            verbose=0, primal=primal,
-                                            params=search_params,
-                                            performance_metric=kwargs['performance_metric'])
+        model = wrapper_class(build_fn=build_fn, primal=primal,
+                                params=search_params,
+                                val_metric=kwargs['val_metric'],
+                                metric=kwargs['metric'])
 
     return model
 

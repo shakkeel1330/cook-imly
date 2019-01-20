@@ -15,17 +15,12 @@ def get_best_model(x_train, y_train, **kwargs):
     kwargs.setdefault('experiment_no', '1')
     dataset_name = kwargs['dataset_name']
     experiment_no = kwargs['experiment_no']
-    performance_metric = kwargs['performance_metric']
+    val_metric = kwargs['val_metric']
+    metric = kwargs['metric']
 
     for name, value in params.items():
         if type(value) != list:
             params[name] = [value]
-
-#     x_train = x_train.values
-#     y_pred = y_pred.values  # Converting df to np.array
-#     print("From talos.py --- ", params)
-#     print("x_train_shape -- ", x_train.shape)
-#     print("y_pred_shape -- ", y_pred.shape)
 
     h = ta.Scan(x_train, y_pred,
                 params=params,
@@ -35,10 +30,12 @@ def get_best_model(x_train, y_train, **kwargs):
                 grid_downsample=0.5)
 
     report = h.data
-    best_model = report.sort_values(performance_metric, ascending=True).iloc[0]
+    best_model = report.sort_values(val_metric, ascending=True).iloc[0]
     best_model_id = best_model.name - 1
     dnn_model = activate_model(h, best_model_id)
     loss = best_model.losses
+    epochs = int(best_model.epochs)
+    batch_size = int(best_model.batch_size)
     optimizer = best_model.optimizer
-    dnn_model.compile(optimizer=optimizer, loss=loss, metrics=[loss])
-    return dnn_model
+    dnn_model.compile(optimizer=optimizer, loss=loss, metrics=[metric])
+    return dnn_model, epochs, batch_size

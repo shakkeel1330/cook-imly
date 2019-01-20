@@ -1,14 +1,16 @@
 from keras.wrappers.scikit_learn import KerasClassifier
 from optimizers.talos.talos import get_best_model
 import pickle, onnxmltools
+import numpy as np
 
 
 class SklearnKerasClassifier(KerasClassifier):
         def __init__(self, build_fn, **kwargs):
-            super(KerasClassifier, self).__init__(build_fn=build_fn, epochs=kwargs['epochs'])
+            super(KerasClassifier, self).__init__(build_fn=build_fn)
             self.primal = kwargs['primal']
             self.params = kwargs['params']
-            self.performance_metric = kwargs['performance_metric']
+            self.val_metric = kwargs['val_metric']
+            self.metric = kwargs['metric']
 
         def fit(self, x_train, y_train, **kwargs):
             print('Keras classifier chosen')
@@ -20,14 +22,25 @@ class SklearnKerasClassifier(KerasClassifier):
                 'model_name': primal_model.__class__.__name__
             }
 
-            self.model = get_best_model(x_train, y_train, primal_data=primal_data, params=self.params, 
-                                        performance_metric=self.performance_metric) 
-            # self.model.fit(x_train, y_train)
+            # This is to update the 'classes_' variable used in keras_regressor
+            y_train = np.array(y_train)
+            if len(y_train.shape) == 2 and y_train.shape[1] > 1:
+                self.classes_ = np.arange(y_train.shape[1])
+            elif (len(y_train.shape) == 2 and y_train.shape[1] == 1) or len(y_train.shape) == 1:
+                self.classes_ = np.unique(y_train)
+                y_train = np.searchsorted(self.classes_, y_train)
+            else:
+                raise ValueError('Invalid shape for y_train: ' + str(y_train.shape))
 
-            # super(SklearnKerasClassifier, self).fit(x_train, y_train) # Why? - 'classes_' missing
-            # return self.model
-            return super(SklearnKerasClassifier, self).fit(x_train, y_train) # What's the difference between return self.model and this
-
+            self.model, final_epoch, final_batch_size = get_best_model(x_train, y_train,
+                                                                       primal_data=primal_data,
+                                                                       params=self.params, 
+                                                                       val_metric=self.val_metric, 
+                                                                       metric=self.metric) 
+            self.model.fit(x_train, y_train, epochs=final_epoch,
+                           batch_size=final_batch_size, verbose=0)
+            return self.model
+ 
         def save(self, using='dnn'):
             if using == 'sklearn':
                 filename = 'scikit_model'

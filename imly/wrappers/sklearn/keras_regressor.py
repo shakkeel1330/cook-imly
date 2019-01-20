@@ -3,12 +3,13 @@ from optimizers.talos.talos import get_best_model
 import pickle, onnxmltools
 
 
-class SklearnKerasRegressor(KerasRegressor): # Remove sklearn -> sklearn_regressor flow
+class SklearnKerasRegressor(KerasRegressor):
         def __init__(self, build_fn, **kwargs):
             super(KerasRegressor, self).__init__(build_fn=build_fn)
             self.primal = kwargs['primal']
             self.params = kwargs['params']
-            self.performance_metric = kwargs['performance_metric']
+            self.val_metric = kwargs['val_metric']
+            self.metric = kwargs['metric']
 
         def fit(self, x_train, y_train, **kwargs):
             primal_model = self.primal
@@ -18,14 +19,19 @@ class SklearnKerasRegressor(KerasRegressor): # Remove sklearn -> sklearn_regress
                 'y_pred': y_pred,
                 'model_name': primal_model.__class__.__name__
             }
-            # kwargs['y_pred'] = y_pred
-            # kwargs['model_name'] = self.__class__.__name__
-            # kwargs['performance_metric'] = self.performance_metric
 
-            self.model = get_best_model(x_train, y_train, primal_data=primal_data, params=self.params, 
-                                        performance_metric=self.performance_metric)  # get_best_model - rename
-            self.model.fit(x_train, y_train)
+            self.model, final_epoch, final_batch_size = get_best_model(x_train, y_train, 
+                                                                       primal_data=primal_data,
+                                                                       params=self.params, 
+                                                                       val_metric=self.val_metric,
+                                                                       metric=self.metric)
+            self.model.fit(x_train, y_train, epochs=final_epoch,
+                           batch_size=final_batch_size, verbose=0)  # Epochs and batch_size passed in Talos as well
             return self.model
+
+        def score(self, x, y, **kwargs):
+            score = super(SklearnKerasRegressor, self).score(x, y, **kwargs)
+            return -score # keras_regressor treats all score values as loss and adds a '-ve' before passing
 
         def save(self, using='dnn'):
             if using == 'sklearn':
