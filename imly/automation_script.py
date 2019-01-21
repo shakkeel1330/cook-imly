@@ -97,7 +97,7 @@ def write_to_mastersheet(data,X,Y,accuracy_values):
     worksheet.update_cell(row_nb+1, worksheet.find("Type").col, data['type'])
 
 
-def dopify(dataset_info, model_name, X, Y, test_size, **kwargs):
+def run_imly(dataset_info, model_name, X, Y, test_size, **kwargs):
     kwargs.setdefault('params', {})
     x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=test_size, random_state=0)
 
