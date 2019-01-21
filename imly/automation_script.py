@@ -36,9 +36,9 @@ def get_dataset_info(dataset_name):
 
     dataset_list = worksheet.col_values(worksheet.find("Name").col)
     url_list = worksheet.col_values(worksheet.find("Link").col)
-    params_list = worksheet.row_values(worksheet.find("use_bias").row)
-    params_list = params_list[params_list.index('use_bias'):]
-    params_dict = {x:i+7 for i,x in enumerate(params_list)}
+    # params_list = worksheet.row_values(worksheet.find("use_bias").row)
+    # params_list = params_list[params_list.index('use_bias'):]
+    # params_dict = {x:i+7 for i,x in enumerate(params_list)}
     activation_col_nb = worksheet.find("Algorithm").col
     activation_list = worksheet.col_values(activation_col_nb)
 
@@ -55,7 +55,7 @@ def get_dataset_info(dataset_name):
 
     dataset_info = {
         "url": data_url,
-        'params_dict': params_dict,
+        # 'params_dict': params_dict,
         'activation_function': activation_function,
         'n_col': n_col_nb,
         'p_col': p_col_nb,
@@ -68,7 +68,7 @@ def get_dataset_info(dataset_name):
 def write_to_mastersheet(data,X,Y,accuracy_values):
 
     worksheet = load_sheet()
-    params_dict = data['params_dict']
+    # params_dict = data['params_dict']
     scikit_params = data['scikit_params']
     keras_params = data['keras_params']
     row_nb = data['row_nb']

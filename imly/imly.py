@@ -23,23 +23,26 @@ def dope(model, **kwargs):
     kwargs.setdefault('params', params)
     search_params = {**params, **kwargs['params']}
 
+    # Map model name to it's respective wrapper
     wrapper_mapping_json = json.load(open('../imly/wrappers/keras_wrapper_mapping.json'))
     for key, value in wrapper_mapping_json.items():
         for name in value:
             if model_name == name:
                 wrapper_class = key
 
+    # Extract the wrapper_class using the wrapper_name
     path = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', wrapper_class)
     module_path = re.sub('([a-z0-9])([A-Z])', r'\1_\2', path).lower()
     package_name = module_path.split('_')[0]
     wrapper_name = '_'.join(module_path.split('_')[1:3])
-
     module_path = 'wrappers.' + package_name + '.' + wrapper_name
     wrapper_module = __import__(module_path, fromlist=[wrapper_class])
     wrapper_class = getattr(wrapper_module, wrapper_class)
 
-    kwargs.setdefault('val_metric', params_json['params'][model_name]['val_metric'])  # val_metric -- to sort best model from Talos
-    kwargs.setdefault('metric', params_json['params'][model_name]['metric'])  # metric -- to be passed while final model is compiled
+    # val_metric -- to sort best model from Talos
+    kwargs.setdefault('val_metric', params_json['params'][model_name]['val_metric'])
+    # metric -- to be passed while final model is compiled
+    kwargs.setdefault('metric', params_json['params'][model_name]['metric'])
 
     if kwargs['using'] == 'dnn':
         primal = copy.deepcopy(model)
