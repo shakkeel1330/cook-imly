@@ -2,6 +2,14 @@ import json
 
 
 def get_model_design(name):
+    """Gets function name and param name to create the base model
+
+    # Arguments
+        name: Name of the primal model
+
+    # Returns:
+        The function name and param name mapped to the primal model
+    """
     mapping_data = json.load(open('../imly/utils/mapping.json'))
 
     try:
@@ -11,8 +19,3 @@ def get_model_design(name):
         print('Invalid model name passed to mapping_data')
 
     return fn_name, param_name
-
-
-# Pass params combination as well. f1 to glm
-# Pass mappings as json. Also, Remove unnecessary mappings
-# Remove mapping. Add try catch

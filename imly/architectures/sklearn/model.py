@@ -1,6 +1,5 @@
 from keras.models import Sequential
 from keras.layers.core import Dense
-import numpy as np
 import json
 
 
@@ -22,13 +21,16 @@ class create_model:
             model = function(param_name=self.param_name, 
                              x_train=kwargs['x_train'])
         except KeyError:
-            model = function(param_name=self.param_name, x_train=self.x_train) # Error handling missing. What happens if the user 
-        return model                                                           # sends w/o setting x_train of the object?
+            model = function(param_name=self.param_name, x_train=self.x_train) 
+            # TODO
+            # Error handling missing. What happens if the user
+            # sends w/o setting x_train of the object?
+        return model
 
 
 def glm(**kwargs):  # Should param_name be optional or mandatory?
 
-    params_json = json.load(open('../imly/architectures/sklearn/params.json'))  # Remove and make it generic
+    params_json = json.load(open('../imly/architectures/sklearn/params.json'))
     params = params_json['params'][kwargs['param_name']]
 
     kwargs.setdefault('params', params)

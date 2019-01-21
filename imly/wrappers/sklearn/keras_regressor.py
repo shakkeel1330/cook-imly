@@ -25,13 +25,15 @@ class SklearnKerasRegressor(KerasRegressor):
                                                                        params=self.params, 
                                                                        val_metric=self.val_metric,
                                                                        metric=self.metric)
+            # Epochs and batch_size passed in Talos as well
             self.model.fit(x_train, y_train, epochs=final_epoch,
-                           batch_size=final_batch_size, verbose=0)  # Epochs and batch_size passed in Talos as well
+                           batch_size=final_batch_size, verbose=0)
             return self.model
 
         def score(self, x, y, **kwargs):
             score = super(SklearnKerasRegressor, self).score(x, y, **kwargs)
-            return -score # keras_regressor treats all score values as loss and adds a '-ve' before passing
+            # keras_regressor treats all score values as loss and adds a '-ve' before passing
+            return -score
 
         def save(self, using='dnn'):
             if using == 'sklearn':

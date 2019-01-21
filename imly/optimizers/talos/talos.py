@@ -1,4 +1,3 @@
-import json
 import numpy as np
 import talos as ta
 from ..talos.model import talos_model
@@ -9,7 +8,7 @@ def get_best_model(x_train, y_train, **kwargs):
     np.random.seed(7)
     y_pred = kwargs['primal_data']['y_pred']
     params = kwargs['params']
-    
+
     params['model_name'] = [kwargs['primal_data']['model_name']]
     kwargs.setdefault('dataset_name', 'talos_readings')
     kwargs.setdefault('experiment_no', '1')

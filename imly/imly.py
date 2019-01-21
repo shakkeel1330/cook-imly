@@ -1,9 +1,21 @@
+""" Contains dope function, using which we create the core IMLY model
+"""
+
 from utils.model_mapping import get_model_design
 from architectures.sklearn.model import create_model
 import copy, json, re
 
 
 def dope(model, **kwargs):
+    """Creates the IMLY model
+
+    # Arguments
+        model: The primal model passed by the user that needs to be transpiled.
+        **kwargs: Dictionary of parameters mapped to their keras params.
+
+    # Returns
+        The transpiled model.
+    """
     model_name = model.__class__.__name__
     kwargs.setdefault('using', 'dnn')
     params_json = json.load(open('../imly/optimizers/talos/params.json'))
@@ -43,7 +55,7 @@ def dope(model, **kwargs):
 
     return model
 
-
+# TODO
 # Idea of supporting multiple of backends for ONNX
 # Restructure the backend aspect
 # Add more class(mapping algorithms)
