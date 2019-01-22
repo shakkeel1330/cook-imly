@@ -64,3 +64,4 @@ def dope(model, **kwargs):
 # Add more class(mapping algorithms)
 # Importing Keras from a middle package
 # Multiple cuts(params, model arch and hyperparams)
+# Test
