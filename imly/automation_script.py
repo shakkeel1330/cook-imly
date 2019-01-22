@@ -15,6 +15,8 @@ model_mappings = {
     'logistic_regression': 'LogisticRegression'
 }
 
+classification_models = ['logistic_regression']
+
 
 def load_sheet():
     scope = ['https://spreadsheets.google.com/feeds',
@@ -42,6 +44,8 @@ def get_dataset_info(dataset_name):
     activation_col_nb = worksheet.find("Algorithm").col
     activation_list = worksheet.col_values(activation_col_nb)
 
+    # TODO
+    # Add error case. When no match is found.
     for dataset in dataset_list:
         if dataset_name == dataset:
             row_nb = dataset_list.index(dataset)
@@ -65,7 +69,7 @@ def get_dataset_info(dataset_name):
     return dataset_info
 
 
-def write_to_mastersheet(data,X,Y,accuracy_values):
+def write_to_mastersheet(data, X, Y, accuracy_values):
 
     worksheet = load_sheet()
     # params_dict = data['params_dict']
@@ -77,10 +81,12 @@ def write_to_mastersheet(data,X,Y,accuracy_values):
     c_col_nb = data['c_col']
     n = X.shape[0]
     p = X.shape[1]
-    unique,count = np.unique(Y,return_counts=True)
-    class1=count[0]/X.shape[0]*100
-    class2=count[1]/X.shape[0]*100
-    class_distribution = round(class1, 2)
+    if data['activation_function'] in classification_models:
+        unique, count = np.unique(Y, return_counts=True)
+        class1 = count[0]/X.shape[0]*100
+        class_distribution = round(class1, 2)
+    else:
+        class_distribution = 'NA'
 
     col_nb = worksheet.find('scikit_json').col
     worksheet.update_cell(row_nb+1, col_nb, scikit_params)
@@ -91,13 +97,19 @@ def write_to_mastersheet(data,X,Y,accuracy_values):
     worksheet.update_cell(row_nb+1, n_col_nb, n)
     worksheet.update_cell(row_nb+1, p_col_nb, p)
     worksheet.update_cell(row_nb+1, c_col_nb, class_distribution)
-    worksheet.update_cell(row_nb+1, worksheet.find("Keras acc").col, accuracy_values['keras'])
-    worksheet.update_cell(row_nb+1, worksheet.find("Scikit acc").col, accuracy_values['scikit'])
-    worksheet.update_cell(row_nb+1, worksheet.find("Kfold").col, accuracy_values['kfold'])
+    worksheet.update_cell(row_nb+1, worksheet.find("Keras acc").col,
+                          accuracy_values['keras'])
+    worksheet.update_cell(row_nb+1, worksheet.find("Scikit acc").col,
+                          accuracy_values['scikit'])
+    worksheet.update_cell(row_nb+1, worksheet.find("Kfold").col,
+                          accuracy_values['kfold'])
     worksheet.update_cell(row_nb+1, worksheet.find("Type").col, data['type'])
 
 
 def run_imly(dataset_info, model_name, X, Y, test_size, **kwargs):
+    # TODO 
+    # Remove model_name from arguments. This data is available 
+    # in dataset_info['activation_fn']
     kwargs.setdefault('params', {})
     x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=test_size, random_state=0)
 
