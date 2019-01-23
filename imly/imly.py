@@ -52,9 +52,9 @@ def dope(model, **kwargs):
         build_fn = create_model(fn_name, param_name)
 
         model = wrapper_class(build_fn=build_fn, primal=primal,
-                                params=search_params,
-                                val_metric=kwargs['val_metric'],
-                                metric=kwargs['metric'])
+                              params=search_params,
+                              val_metric=kwargs['val_metric'],
+                              metric=kwargs['metric'])
 
     return model
 
