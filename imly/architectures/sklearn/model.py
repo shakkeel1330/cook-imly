@@ -81,3 +81,4 @@ def lda(**kwargs):
 # Passing activation fn for multiple layers in Talos
 # reg_par missing for kernal_regularizer
 # loss for lda pending
+# test
