@@ -19,7 +19,6 @@ class SklearnKerasRegressor(KerasRegressor):
                 'y_pred': y_pred,
                 'model_name': primal_model.__class__.__name__
             }
-
             self.model, final_epoch, final_batch_size = get_best_model(x_train, y_train, 
                                                                        primal_data=primal_data,
                                                                        params=self.params, 
