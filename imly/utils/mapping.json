@@ -6,5 +6,9 @@
     "LogisticRegression": {
         "model": "glm",
         "param": "log_reg"
+    },
+    "LinearDiscriminantAnalysis": {
+        "model": "lda",
+        "param": "lda_1"
     }
 }

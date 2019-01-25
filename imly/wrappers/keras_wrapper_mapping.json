@@ -1,4 +1,4 @@
 {
-    "SklearnKerasClassifier":["LogisticRegression"],
+    "SklearnKerasClassifier":["LogisticRegression", "LinearDiscriminantAnalysis"],
     "SklearnKerasRegressor":["LinearRegression"]
 }

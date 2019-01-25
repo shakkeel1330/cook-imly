@@ -12,6 +12,14 @@
             "activation": "sigmoid",
             "optimizer": "adam",
             "losses": "binary_crossentropy"
+        },
+        "lda_1": {
+            "units": 1,
+            "activation_1": "sigmoid",
+            "activation_4": "linear",
+            "kernel_regularizer":"l2",
+            "optimizer": "adam",
+            "losses": "binary_crossentropy"
         }
     }
 }

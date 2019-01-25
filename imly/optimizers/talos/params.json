@@ -69,6 +69,47 @@
       },
       "val_metric": "val_loss",
       "metric": "accuracy"
+    },
+    "LinearDiscriminantAnalysis": {
+      "config": {
+        "lr": [
+          2,
+          10,
+          30
+        ],
+        "units": [
+          1
+        ],
+        "batch_size": [
+          10
+        ],
+        "epochs": [
+          10
+        ],
+        "weight_regulizer": [
+          null
+        ],
+        "emb_output_dims": [
+          null
+        ],
+        "optimizer": [
+          "adam"
+        ],
+        "losses": [
+          "binary_crossentropy"
+        ],
+        "activation_1": [
+          "sigmoid"
+        ],
+        "activation_4": [
+          "sigmoid"
+        ],
+        "kernel_regularizer":[
+          "l2"
+        ]
+      },
+      "val_metric": "val_loss",
+      "metric": "accuracy"
     }
   }
 }

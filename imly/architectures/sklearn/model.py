@@ -44,3 +44,41 @@ def glm(**kwargs):  # Should param_name be optional or mandatory?
                   loss=kwargs['params']['losses'])
 
     return model
+
+
+def lda(**kwargs):
+
+    params_json = json.load(open('../imly/architectures/sklearn/params.json'))
+    params = params_json['params'][kwargs['param_name']]
+
+    kwargs.setdefault('params', params)
+
+    model = Sequential()
+    model.add(Dense(kwargs['params']['units'],
+                    input_dim=kwargs['x_train'].shape[1],
+                    activation=kwargs['params']['activation_1'],
+                    kernel_regularizer=kwargs['params']['kernel_regularizer']))
+
+    model.add(Dense(kwargs['params']['units'],
+                    activation=kwargs['params']['activation_1'],
+                    kernel_regularizer=kwargs['params']['kernel_regularizer']))
+
+    model.add(Dense(kwargs['params']['units'],
+                    activation=kwargs['params']['activation_1'],
+                    kernel_regularizer=kwargs['params']['kernel_regularizer']))
+
+    model.add(Dense(kwargs['params']['out_dim_size'],
+                    activation=kwargs['params']['activation_4'],
+                    kernel_regularizer=kwargs['params']['kernel_regularizer']))
+
+    model.compile(optimizer=kwargs['params']['optimizer'],
+                  loss=kwargs['params']['losses'])
+
+    return model
+
+
+# TODO
+# Passing activation fn for multiple layers in Talos
+# reg_par missing for kernal_regularizer
+# loss for lda pending
+# test
