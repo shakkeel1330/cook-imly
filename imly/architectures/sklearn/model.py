@@ -12,7 +12,7 @@ class create_model:
     def __call__(self, **kwargs):
         try:
             module = __import__('architectures.sklearn.model',
-                                fromlist=[self.fn_name])
+                                fromlist=[self.fn_name]) 
             function = getattr(module, self.fn_name)
         except KeyError:
             print('Invalid model name passed to mapping_data')
@@ -21,10 +21,12 @@ class create_model:
             model = function(param_name=self.param_name, 
                              x_train=kwargs['x_train'])
         except KeyError:
-            model = function(param_name=self.param_name, x_train=self.x_train) 
             # TODO
-            # Error handling missing. What happens if the user
+            # 1) Error handling missing. What happens if the user
             # sends w/o setting x_train of the object?
+            # 2) Looks like this use case is not meaningful anymore.
+            # Cross check and remove.
+            model = function(param_name=self.param_name, x_train=self.x_train)
         return model
 
 
