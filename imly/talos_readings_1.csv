@@ -1,2 +1,2 @@
 round_epochs,val_loss,loss,lr,units,batch_size,epochs,weight_regulizer,emb_output_dims,optimizer,losses,activation,model_name
-10,1.7582296821976653,1.7135262883749358,30,1,10,10,None,None,adam,binary_crossentropy,sigmoid,LogisticRegression
+170,0.8290901184082031,0.8431279403822762,30,1,10,170,None,None,adam,binary_crossentropy,sigmoid,LogisticRegression

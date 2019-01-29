@@ -50,7 +50,7 @@ class SklearnKerasClassifier(KerasClassifier):
                 onnx_model = onnxmltools.convert_keras(self.model)
                 return onnx_model
 
-        def predict_classes(self, x):
-            predicted_classes = self.model.predict_classes(x)
-            print(predicted_classes)
-            return predicted_classes
+        # def predict_classes(self, x):
+        #     predicted_classes = self.model.predict_classes(x)
+        #     print(predicted_classes)
+        #     return predicted_classes
