@@ -45,6 +45,8 @@ def dope(model, **kwargs):
     kwargs.setdefault('metric', params_json['params'][model_name]['metric'])
 
     if kwargs['using'] == 'dnn':
+        # TODO
+        # Rename model, since it's causing confusion at line 63
         primal = copy.deepcopy(model)
 
         fn_name, param_name = get_model_design(model_name)
@@ -64,3 +66,4 @@ def dope(model, **kwargs):
 # Add more class(mapping algorithms)
 # Importing Keras from a middle package
 # Multiple cuts(params, model arch and hyperparams)
+# Test commit - testing 'push' to 'dev'

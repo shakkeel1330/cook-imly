@@ -39,7 +39,8 @@ class SklearnKerasClassifier(KerasClassifier):
                                                                        metric=self.metric) 
             self.model.fit(x_train, y_train, epochs=final_epoch,
                            batch_size=final_batch_size, verbose=0)
-            return self.model
+            final_model = self.model
+            return final_model
  
         def save(self, using='dnn'):
             if using == 'sklearn':
@@ -48,3 +49,8 @@ class SklearnKerasClassifier(KerasClassifier):
             else:
                 onnx_model = onnxmltools.convert_keras(self.model)
                 return onnx_model
+
+        def predict_classes(self, x):
+            predicted_classes = self.model.predict_classes(x)
+            print(predicted_classes)
+            return predicted_classes
