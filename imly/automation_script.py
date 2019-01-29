@@ -164,7 +164,7 @@ def run_imly(dataset_info, model_name, X, Y, test_size, **kwargs):
         correlation = ccc(sklearn_pred, keras_pred)
 
     elif(primal_model.__class__.__name__ == 'LogisticRegression'):
-        keras_pred = m.predict_classes(x_test)
+        keras_pred = m.predict(x_test)
         cnf_matrix = confusion_matrix(sklearn_pred, keras_pred)
         class_names = np.unique(sklearn_pred)
         fig = plot_confusion_matrix(cnf_matrix, classes=class_names)
