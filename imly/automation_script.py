@@ -13,10 +13,11 @@ from utils.correlations import concordance_correlation_coefficient as ccc
 
 model_mappings = {
     'linear_regression': 'LinearRegression',
-    'logistic_regression': 'LogisticRegression'
+    'logistic_regression': 'LogisticRegression',
+    'linear_discrimant_analysis': 'LinearDiscriminantAnalysis'
 }
 
-classification_models = ['logistic_regression']
+classification_models = ['logistic_regression', 'linear_discrimant_analysis']
 
 
 def load_sheet():
@@ -37,12 +38,12 @@ def load_sheet():
 def get_dataset_info(dataset_name):
     worksheet = load_sheet()
 
-    dataset_list = worksheet.col_values(worksheet.find("Name").col)
-    url_list = worksheet.col_values(worksheet.find("Link").col)
+    dataset_list = worksheet.col_values(worksheet.find("name").col)
+    url_list = worksheet.col_values(worksheet.find("link").col)
     # params_list = worksheet.row_values(worksheet.find("use_bias").row)
     # params_list = params_list[params_list.index('use_bias'):]
     # params_dict = {x:i+7 for i,x in enumerate(params_list)}
-    activation_col_nb = worksheet.find("Algorithm").col
+    activation_col_nb = worksheet.find("algorithm").col
     activation_list = worksheet.col_values(activation_col_nb)
 
     # TODO
@@ -52,9 +53,9 @@ def get_dataset_info(dataset_name):
             row_nb = dataset_list.index(dataset)
             data_url = url_list[row_nb]
 
-    n_col_nb = worksheet.find("N").col
-    p_col_nb = worksheet.find("P").col
-    c_col_nb = worksheet.find("Class distribution").col
+    n_col_nb = worksheet.find("n").col
+    p_col_nb = worksheet.find("p").col
+    c_col_nb = worksheet.find("class_distribution").col
     activation_function = activation_list[row_nb]
     data_url = url_list[row_nb]
 
@@ -99,17 +100,17 @@ def write_to_mastersheet(data, X, Y, exp_results):
     worksheet.update_cell(row_nb+1, n_col_nb, n)
     worksheet.update_cell(row_nb+1, p_col_nb, p)
     worksheet.update_cell(row_nb+1, c_col_nb, class_distribution)
-    worksheet.update_cell(row_nb+1, worksheet.find("Keras acc").col,
+    worksheet.update_cell(row_nb+1, worksheet.find("keras_acc").col,
                           exp_results['keras'])
-    worksheet.update_cell(row_nb+1, worksheet.find("Scikit acc").col,
+    worksheet.update_cell(row_nb+1, worksheet.find("scikit_acc").col,
                           exp_results['scikit'])
-    worksheet.update_cell(row_nb+1, worksheet.find("Kfold").col,
+    worksheet.update_cell(row_nb+1, worksheet.find("kfold").col,
                           exp_results['kfold'])
     worksheet.update_cell(row_nb+1, worksheet.find("plots").col,
                           exp_results['fig_url'])
     worksheet.update_cell(row_nb+1, worksheet.find("correlation").col,
                           exp_results['correlation'])
-    worksheet.update_cell(row_nb+1, worksheet.find("Type").col, data['type'])
+    worksheet.update_cell(row_nb+1, worksheet.find("type").col, data['type'])
 
 
 def run_imly(dataset_info, model_name, X, Y, test_size, **kwargs):
@@ -153,8 +154,9 @@ def run_imly(dataset_info, model_name, X, Y, test_size, **kwargs):
     # TODO
     # Add 'class_name' mapping
     sklearn_pred = y_pred
-    keras_pred = m.predict(x_test)
+    # keras_pred = m.predict_classes(x_test)
     if(primal_model.__class__.__name__ == 'LinearRegression'):
+        keras_pred = m.predict(x_test)
         fig = plot_correlation(sklearn_pred, keras_pred)
         fig_name, fig_path = get_fig_details(dataset_info)
         fig.savefig(fig_path, bbox_inches='tight')
@@ -162,6 +164,7 @@ def run_imly(dataset_info, model_name, X, Y, test_size, **kwargs):
         correlation = ccc(sklearn_pred, keras_pred)
 
     elif(primal_model.__class__.__name__ == 'LogisticRegression'):
+        keras_pred = m.predict_classes(x_test)
         cnf_matrix = confusion_matrix(sklearn_pred, keras_pred)
         class_names = np.unique(sklearn_pred)
         fig = plot_confusion_matrix(cnf_matrix, classes=class_names)
@@ -197,8 +200,8 @@ def get_fig_details(dataset_info):
     when provided with the dataset info.
     fig_name = <dataset_name>_<algorithm_name>
     '''
-    fig_name = ('_').join([dataset_info['name'], dataset_info['activation_function']])
-    fig_path = '../data/' + fig_name + '.pdf'
+    fig_name = ('_').join([dataset_info['name'], dataset_info['activation_function']]) + '.pdf'
+    fig_path = '../data/' + fig_name
     return fig_name, fig_path
 
 
@@ -207,10 +210,10 @@ def plot_correlation(sklearn_pred, keras_pred):
     Creates and returns correlation plot
     '''
     fig = plt.figure()
-    plt.scatter(keras_pred, sklearn_pred)
+    plt.scatter(sklearn_pred, keras_pred)
     plt.title('Correlation plot')
-    plt.ylabel('Scikit predictions')
-    plt.xlabel('Keras predictions')
+    plt.xlabel('Scikit predictions')
+    plt.ylabel('Keras predictions')
     return fig
 
 
@@ -262,7 +265,7 @@ def write_plot_to_s3(fig_path, fig_name):
     import sys
     from boto.s3.key import Key
     # from boto.s3.key import Key
-    bucket_name = 'mlsquare-datasets'
+    bucket_name = 'mlsquare-pdf'
     credentials_json = json.load(open('../data/aws_credentials.json'))
     AWS_ACCESS_KEY_ID = credentials_json['AWS_ACCESS_KEY_ID']
     AWS_SECRET_ACCESS_KEY = credentials_json['AWS_SECRET_ACCESS_KEY']
