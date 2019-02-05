@@ -8,10 +8,10 @@ def talos_model(x_train, y_train, x_val, y_val, params):
     mapping_instance = create_model(fn_name=fn_name, param_name=param_name)
     model = mapping_instance.__call__(x_train=x_train)
 
-    out = model.fit(x_train, y_train,
-                    batch_size=params['batch_size'],
-                    epochs=params['epochs'],
-                    verbose=0,
-                    validation_data=[x_val, y_val])
+    out = model.fit(x_train, y_train)
+                    # batch_size=params['batch_size'],
+                    # epochs=params['epochs'],
+                    # verbose=0)
+                    # validation_data=[x_val, y_val])
 
     return out, model
