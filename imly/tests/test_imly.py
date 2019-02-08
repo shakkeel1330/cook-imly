@@ -6,6 +6,25 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 
 
+'''
+The automation_script has been altered in such a way that it returns
+a dict called 'exp_results'. 
+The structure of exp_results is as follows -
+
+    exp_results = {
+        'keras': keras_score,
+        'scikit': primal_score,
+        'kfold': None,
+        'fig_url': fig_url,
+        'correlation': correlation_value
+    }
+
+test_classification() and test_regression asserts that the accuracy values
+are in between 0 and 1.
+
+'''
+
+
 def load_diabetes():
 
     dataset_info = automation_script.get_dataset_info("diabetes")
