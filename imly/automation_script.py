@@ -157,24 +157,24 @@ def run_imly(dataset_info, model_name, X, Y, test_size, **kwargs):
     # Add 'class_name' mapping
     sklearn_pred = y_pred
     # keras_pred = m.predict_classes(x_test)
-    if(primal_model.__class__.__name__ == 'LinearRegression'):
-        keras_pred = m.predict(x_test)
-        fig = plot_correlation(sklearn_pred, keras_pred)
-        fig_name, fig_path = get_fig_details(dataset_info)
-        fig.savefig(fig_path, bbox_inches='tight')
-        fig_url = write_plot_to_s3(fig_path, fig_name)
-        correlation = ccc(sklearn_pred, keras_pred)
+    # if(primal_model.__class__.__name__ == 'LinearRegression'):
+    #     keras_pred = m.predict(x_test)
+    #     fig = plot_correlation(sklearn_pred, keras_pred)
+    #     fig_name, fig_path = get_fig_details(dataset_info)
+    #     fig.savefig(fig_path, bbox_inches='tight')
+    #     fig_url = write_plot_to_s3(fig_path, fig_name)
+    #     correlation = ccc(sklearn_pred, keras_pred)
 
-    elif(primal_model.__class__.__name__ == 'LogisticRegression'):
-        keras_pred = m.predict(x_test)
-        cnf_matrix = confusion_matrix(sklearn_pred, keras_pred)
-        class_names = np.unique(sklearn_pred)
-        fig = plot_confusion_matrix(cnf_matrix, classes=class_names)
-        fig_name, fig_path = get_fig_details(dataset_info)
-        fig.savefig(fig_path, bbox_inches='tight')
-        fig_url = write_plot_to_s3(fig_path, fig_name)
-    else:
-        fig_url = 'NA'
+    # elif(primal_model.__class__.__name__ == 'LogisticRegression'):
+    #     keras_pred = m.predict(x_test)
+    #     cnf_matrix = confusion_matrix(sklearn_pred, keras_pred)
+    #     class_names = np.unique(sklearn_pred)
+    #     fig = plot_confusion_matrix(cnf_matrix, classes=class_names)
+    #     fig_name, fig_path = get_fig_details(dataset_info)
+    #     fig.savefig(fig_path, bbox_inches='tight')
+    #     fig_url = write_plot_to_s3(fig_path, fig_name)
+    # else:
+    #     fig_url = 'NA'
 
     # Prepare Keras configuration #
     keras_params = m.__dict__['model'].get_config()
