@@ -137,7 +137,7 @@ def run_imly(dataset_info, model_name, X, Y, test_size, **kwargs):
     primal_model = copy.deepcopy(model_instance)
 
     # Primal
-    primal_model.fit(x_train, y_train)
+    primal_model.fit(x_train, y_train.values.ravel()) # Why use '.values.ravel()'? -- 
     y_pred = primal_model.predict(x_test)
     if (primal_model.__class__.__name__ == 'LogisticRegression') or \
        (primal_model.__class__.__name__ == 'LinearDiscriminantAnalysis'):
@@ -150,7 +150,7 @@ def run_imly(dataset_info, model_name, X, Y, test_size, **kwargs):
     # Keras
     x_train = x_train.values  # Talos accepts only numpy arrays
     m = dope(base_model, params=kwargs['params'])
-    m.fit(x_train, y_train)
+    m.fit(x_train, y_train.values.ravel())
     keras_score = m.score(x_test, y_test)
 
     # Create plot and write to s3 bucket #

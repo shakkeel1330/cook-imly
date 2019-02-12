@@ -48,7 +48,7 @@ class SklearnKerasClassifier(KerasClassifier):
                 fn_name, param_name = get_model_design(primal_data['model_name'])
                 mapping_instance = create_model(fn_name=fn_name, param_name=param_name)
                 self.model = mapping_instance.__call__(x_train=x_train)
-                self.model.fit(x_train, y_train, epochs=40, batch_size=20)
+                self.model.fit(x_train, y_train, epochs=500, batch_size=100)
 
             final_model = self.model
             return final_model
