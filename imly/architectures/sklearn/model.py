@@ -62,21 +62,6 @@ def lda(**kwargs):
                     input_dim=kwargs['x_train'].shape[1],
                     activation=kwargs['params']['activation'][0],
                     kernel_regularizer=l2(1e-5)))
-                    # kernel_regularizer=kwargs['params']['kernel_regularizer']))
-
-
-    # model.add(Dense(kwargs['params']['units'],
-    #                 activation=kwargs['params']['activation_1'],
-    #                 kernel_regularizer=kwargs['params']['kernel_regularizer']))
-
-    # model.add(Dense(kwargs['params']['units'],
-    #                 activation=kwargs['params']['activation_1'],
-    #                 kernel_regularizer=kwargs['params']['kernel_regularizer']))
-
-    # model.add(Dense(kwargs['params']['out_dim_size'],
-    #                 activation=kwargs['params']['activation_4'],
-    #                 kernel_regularizer=kwargs['params']['kernel_regularizer']))
-
     model.compile(optimizer=kwargs['params']['optimizer'],
                   loss=lda_loss(n_components=1, margin=1),
                   metrics=['accuracy'])
@@ -87,7 +72,4 @@ def lda(**kwargs):
 
 
 # TODO
-# Passing activation fn for multiple layers in Talos
 # reg_par missing for kernal_regularizer
-# loss for lda pending
-# test
