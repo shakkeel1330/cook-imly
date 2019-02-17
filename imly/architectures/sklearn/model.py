@@ -1,5 +1,6 @@
 from keras.models import Sequential
 from keras.layers.core import Dense
+from utils.losses import lda_loss
 import json
 
 
@@ -58,23 +59,23 @@ def lda(**kwargs):
     model = Sequential()
     model.add(Dense(kwargs['params']['units'],
                     input_dim=kwargs['x_train'].shape[1],
-                    activation=kwargs['params']['activation_1'],
+                    activation=kwargs['params']['activation'][0],
                     kernel_regularizer=kwargs['params']['kernel_regularizer']))
 
-    model.add(Dense(kwargs['params']['units'],
-                    activation=kwargs['params']['activation_1'],
-                    kernel_regularizer=kwargs['params']['kernel_regularizer']))
+    # model.add(Dense(kwargs['params']['units'],
+    #                 activation=kwargs['params']['activation_1'],
+    #                 kernel_regularizer=kwargs['params']['kernel_regularizer']))
 
-    model.add(Dense(kwargs['params']['units'],
-                    activation=kwargs['params']['activation_1'],
-                    kernel_regularizer=kwargs['params']['kernel_regularizer']))
+    # model.add(Dense(kwargs['params']['units'],
+    #                 activation=kwargs['params']['activation_1'],
+    #                 kernel_regularizer=kwargs['params']['kernel_regularizer']))
 
-    model.add(Dense(kwargs['params']['out_dim_size'],
-                    activation=kwargs['params']['activation_4'],
-                    kernel_regularizer=kwargs['params']['kernel_regularizer']))
+    # model.add(Dense(kwargs['params']['out_dim_size'],
+    #                 activation=kwargs['params']['activation_4'],
+    #                 kernel_regularizer=kwargs['params']['kernel_regularizer']))
 
     model.compile(optimizer=kwargs['params']['optimizer'],
-                  loss=kwargs['params']['losses'])
+                  loss=lda_loss(n_components=1, margin=1))
 
     return model
 

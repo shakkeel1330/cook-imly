@@ -117,6 +117,7 @@ def run_imly(dataset_info, model_name, X, Y, test_size, **kwargs):
     # TODO
     # Remove model_name from arguments. This data is available
     # in dataset_info['activation_fn']
+    kwargs.setdefault('return_exp_results', False)
     correlation = 'NA'
     fig_url = 'NA'
     kwargs.setdefault('params', {})
@@ -127,7 +128,8 @@ def run_imly(dataset_info, model_name, X, Y, test_size, **kwargs):
         if key == model_name:
             name = value
 
-    module = __import__('sklearn.linear_model', fromlist=[name])
+    # module = __import__('sklearn.linear_model', fromlist=[name])
+    module = __import__('sklearn.discriminant_analysis', fromlist=[name])
     imported_module = getattr(module, name)
     model = imported_module
     model_instance = model()
@@ -137,7 +139,8 @@ def run_imly(dataset_info, model_name, X, Y, test_size, **kwargs):
     # Primal
     primal_model.fit(x_train, y_train)
     y_pred = primal_model.predict(x_test)
-    if (primal_model.__class__.__name__ == 'LogisticRegression'):
+    if (primal_model.__class__.__name__ == 'LogisticRegression') or \
+       (primal_model.__class__.__name__ == 'LinearDiscriminantAnalysis'):
         primal_score = primal_model.score(x_test, y_test)
     else:
         # primal_score = primal_model.score(x_test, y_test)
@@ -191,7 +194,10 @@ def run_imly(dataset_info, model_name, X, Y, test_size, **kwargs):
         'correlation': correlation
     }
 
-    write_to_mastersheet(dataset_info, X, Y, exp_results)
+    if kwargs['return_exp_results']:
+        return exp_results
+    else:
+        write_to_mastersheet(dataset_info, X, Y, exp_results)
 
 
 def get_fig_details(dataset_info):
