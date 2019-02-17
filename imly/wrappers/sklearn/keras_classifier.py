@@ -1,7 +1,13 @@
 from keras.wrappers.scikit_learn import KerasClassifier
+from utils.model_mapping import get_model_design
+from architectures.sklearn.model import create_model
 from optimizers.talos.talos import get_best_model
 import pickle, onnxmltools
 import numpy as np
+# Hyperas imports
+from hyperopt import Trials, STATUS_OK, tpe
+from hyperas import optim
+from hyperas.distributions import choice, uniform, conditional
 
 
 class SklearnKerasClassifier(KerasClassifier):
@@ -32,16 +38,53 @@ class SklearnKerasClassifier(KerasClassifier):
             else:
                 raise ValueError('Invalid shape for y_train: ' + str(y_train.shape))
 
-            self.model, final_epoch, final_batch_size = get_best_model(x_train, y_train,
-                                                                       primal_data=primal_data,
-                                                                       params=self.params, 
-                                                                       val_metric=self.val_metric, 
-                                                                       metric=self.metric) 
-            self.model.fit(x_train, y_train, epochs=final_epoch,
-                           batch_size=final_batch_size, verbose=0)
+            if (primal_model.__class__.__name__ != 'LinearDiscriminantAnalysis'):
+
+                # Hyperas implementation
+                def data():
+                    return x_train, y_train
+
+                def model_for_hyperas(x_train, y_train):
+                    fn_name, param_name = get_model_design(primal_data['model_name'])
+                    mapping_instance = create_model(fn_name=fn_name, param_name=param_name)
+                    self.model = mapping_instance.__call__(x_train=x_train)
+                    self.model.fit(x_train, y_train,
+                                   batch_size={{choice([10, 30])}},
+                                   epochs={{choice([100, 170])}},
+                                   verbose=2)
+                    # score, acc = self.model.evaluate(x_test, y_test, verbose=0)
+                    # print('Test accuracy:', acc)
+                    # return {'loss': -acc, 'status': STATUS_OK, 'model': self.model}
+                    return {'status': STATUS_OK, 'model': self.model}
+
+
+
+
+                # Talos implementation
+                # self.model, final_epoch, final_batch_size = get_best_model(x_train, y_train,
+                #                                                         primal_data=primal_data,
+                #                                                         params=self.params, 
+                #                                                         val_metric=self.val_metric, 
+                #                                                         metric=self.metric) 
+                # self.model.fit(x_train, y_train, epochs=final_epoch,
+                #                batch_size=final_batch_size, verbose=0)
+
+            # Temporarily bypassing Talos optimization for LDA
+            else:
+                fn_name, param_name = get_model_design(primal_data['model_name'])
+                mapping_instance = create_model(fn_name=fn_name, param_name=param_name)
+                self.model = mapping_instance.__call__(x_train=x_train)
+                self.model.fit(x_train, y_train, epochs=500, batch_size=100)
+
+            best_run, best_model = optim.minimize(model=model_for_hyperas,
+                                                  data=data,
+                                                  algo=tpe.suggest,
+                                                  max_evals=5,
+                                                  trials=Trials())
+
             final_model = self.model
             return final_model
- 
+
         def save(self, using='dnn'):
             if using == 'sklearn':
                 filename = 'scikit_model'

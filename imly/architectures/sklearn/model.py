@@ -1,6 +1,7 @@
 from keras.models import Sequential
 from keras.layers.core import Dense
 from utils.losses import lda_loss
+from keras.regularizers import l2
 import json
 
 
@@ -60,28 +61,15 @@ def lda(**kwargs):
     model.add(Dense(kwargs['params']['units'],
                     input_dim=kwargs['x_train'].shape[1],
                     activation=kwargs['params']['activation'][0],
-                    kernel_regularizer=kwargs['params']['kernel_regularizer']))
-
-    # model.add(Dense(kwargs['params']['units'],
-    #                 activation=kwargs['params']['activation_1'],
-    #                 kernel_regularizer=kwargs['params']['kernel_regularizer']))
-
-    # model.add(Dense(kwargs['params']['units'],
-    #                 activation=kwargs['params']['activation_1'],
-    #                 kernel_regularizer=kwargs['params']['kernel_regularizer']))
-
-    # model.add(Dense(kwargs['params']['out_dim_size'],
-    #                 activation=kwargs['params']['activation_4'],
-    #                 kernel_regularizer=kwargs['params']['kernel_regularizer']))
-
+                    kernel_regularizer=l2(1e-5)))
     model.compile(optimizer=kwargs['params']['optimizer'],
-                  loss=lda_loss(n_components=1, margin=1))
+                  loss=lda_loss(n_components=1, margin=1),
+                  metrics=['accuracy'])
+    # Metrics is usually provided through Talos.
+    # Since we are bypassing Talos for LDA, we add the metrics directly.
 
     return model
 
 
 # TODO
-# Passing activation fn for multiple layers in Talos
 # reg_par missing for kernal_regularizer
-# loss for lda pending
-# test
