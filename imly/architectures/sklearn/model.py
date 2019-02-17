@@ -1,6 +1,6 @@
 from keras.models import Sequential
 from keras.layers.core import Dense
-from utils.losses import lda_loss
+# from utils.losses import lda_loss
 from keras.regularizers import l2
 import json
 
@@ -20,8 +20,14 @@ class create_model:
             print('Invalid model name passed to mapping_data')
 
         try:
-            model = function(param_name=self.param_name, 
-                             x_train=kwargs['x_train'])
+            try:
+                model = function(param_name=self.param_name,
+                                 x_train=kwargs['x_train'],
+                                 params=kwargs['params'])
+            except Exception as e:
+                print(e,"from sklearn")
+                model = function(param_name=self.param_name, 
+                                 x_train=kwargs['x_train'])
         except KeyError:
             # TODO
             # 1) Error handling missing. What happens if the user
@@ -34,10 +40,10 @@ class create_model:
 
 def glm(**kwargs):  # Should param_name be optional or mandatory?
 
-    params_json = json.load(open('../imly/architectures/sklearn/params.json'))
-    params = params_json['params'][kwargs['param_name']]
-
-    kwargs.setdefault('params', params)
+    if __name__ == '__main__': # Fix this flow(Temp fix to override error caused by Tune).
+        params_json = json.load(open('../imly/architectures/sklearn/params.json'))
+        params = params_json['params'][kwargs['param_name']]
+        kwargs.setdefault('params', params)
 
     model = Sequential()
     model.add(Dense(kwargs['params']['units'],
@@ -45,7 +51,8 @@ def glm(**kwargs):  # Should param_name be optional or mandatory?
                     activation=kwargs['params']['activation']))
 
     model.compile(optimizer=kwargs['params']['optimizer'],
-                  loss=kwargs['params']['losses'])
+                  loss=kwargs['params']['losses'],
+                  metrics=['accuracy'])
 
     return model
 
@@ -63,7 +70,8 @@ def lda(**kwargs):
                     activation=kwargs['params']['activation'][0],
                     kernel_regularizer=l2(1e-5)))
     model.compile(optimizer=kwargs['params']['optimizer'],
-                  loss=lda_loss(n_components=1, margin=1),
+                #   loss=lda_loss(n_components=1, margin=1),
+                  loss='mse',
                   metrics=['accuracy'])
     # Metrics is usually provided through Talos.
     # Since we are bypassing Talos for LDA, we add the metrics directly.
