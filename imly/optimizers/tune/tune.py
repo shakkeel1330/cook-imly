@@ -1,6 +1,6 @@
 from utils.model_mapping import get_model_design
 from architectures.sklearn.model import create_model
-import os, json
+import os, json, copy
 # Initialize tune
 
 import ray
@@ -18,6 +18,10 @@ def get_best_model(x_train, y_train, **kwargs):
 
     mapping_instance = create_model(fn_name=fn_name, param_name=param_name)
 
+    os.chdir('/home/shakkeel/Desktop/mlsquare/cook-imly/imly')
+    params_json = json.load(open('../imly/optimizers/tune/params.json'))
+    params = params_json['params'][model_name]['config']
+
     def train_model(config, reporter):
         '''
         This functio is used by Tune to train the model with each iteration variations.
@@ -30,10 +34,9 @@ def get_best_model(x_train, y_train, **kwargs):
         '''
         # model = make_model(None)
         # print("---", os.getcwd(),"---")
-        os.chdir('/home/shakkeel/Desktop/mlsquare/cook-imly/imly')
-        params_json = json.load(open('../imly/optimizers/tune/params.json'))
-        params = params_json['params'][model_name]['config']
         model = mapping_instance.__call__(x_train=x_train, params=params)
+        # global compiled_model_copy
+        # compiled_model_copy = copy.deepcopy(model)
         model.fit(x_train, y_pred)
         accuracy = model.evaluate(x_train, y_pred)[1]
         reporter(mean_accuracy=accuracy)
@@ -61,9 +64,7 @@ def get_best_model(x_train, y_train, **kwargs):
         try:
             print("Creating model...")
             # best_model = model_creator(best_trial.config)
-            best_model = mapping_instance.__call__(x_train=x_train) #TODO Pass config as argument
-            print(best_trial.logdir)
-            print(best_trial.last_result["checkpoint"])
+            best_model = mapping_instance.__call__(x_train=x_train, params=params)  #TODO Pass config as argument
             weights = os.path.join(best_trial.logdir, best_trial.last_result["checkpoint"])
             print("Loading from", weights)
             best_model.load_weights(weights)

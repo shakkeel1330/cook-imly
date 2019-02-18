@@ -20,14 +20,9 @@ class create_model:
             print('Invalid model name passed to mapping_data')
 
         try:
-            try:
-                model = function(param_name=self.param_name,
-                                 x_train=kwargs['x_train'],
-                                 params=kwargs['params'])
-            except Exception as e:
-                print(e,"from sklearn")
-                model = function(param_name=self.param_name, 
-                                 x_train=kwargs['x_train'])
+            model = function(param_name=self.param_name,
+                             x_train=kwargs['x_train'],
+                             params=kwargs['params'])
         except KeyError:
             # TODO
             # 1) Error handling missing. What happens if the user
