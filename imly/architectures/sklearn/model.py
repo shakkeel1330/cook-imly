@@ -35,10 +35,10 @@ class create_model:
 
 def glm(**kwargs):  # Should param_name be optional or mandatory?
 
-    if __name__ == '__main__': # Fix this flow(Temp fix to override error caused by Tune).
-        params_json = json.load(open('../imly/architectures/sklearn/params.json'))
-        params = params_json['params'][kwargs['param_name']]
-        kwargs.setdefault('params', params)
+    params_json = json.load(open('../imly/architectures/sklearn/params.json'))
+    params = params_json['params'][kwargs['param_name']]
+
+    kwargs.setdefault('params', params)
 
     model = Sequential()
     model.add(Dense(kwargs['params']['units'],

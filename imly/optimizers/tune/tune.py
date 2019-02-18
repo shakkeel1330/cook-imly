@@ -24,7 +24,7 @@ def get_best_model(x_train, y_train, **kwargs):
 
     def train_model(config, reporter):
         '''
-        This functio is used by Tune to train the model with each iteration variations.
+        This function is used by Tune to train the model with each iteration variations.
 
         Args:
             config(dict): A dictionary with the search params passed by Tune.
@@ -32,15 +32,14 @@ def get_best_model(x_train, y_train, **kwargs):
             reporter: A function used by Tune to keep a track of the metric by
             which the iterations should be optimized.
         '''
-        # model = make_model(None)
-        # print("---", os.getcwd(),"---")
-        model = mapping_instance.__call__(x_train=x_train, params=params)
-        # global compiled_model_copy
-        # compiled_model_copy = copy.deepcopy(model)
+
+        model = mapping_instance.__call__(x_train=x_train, params=params)  # Fix!
+
         model.fit(x_train, y_pred)
         accuracy = model.evaluate(x_train, y_pred)[1]
         reporter(mean_accuracy=accuracy)
-    
+
+
     # define experiment config
     configuration = tune.Experiment(
         # TODO
@@ -63,11 +62,10 @@ def get_best_model(x_train, y_train, **kwargs):
     for best_trial in sorted_trials:
         try:
             print("Creating model...")
-            # best_model = model_creator(best_trial.config)
-            best_model = mapping_instance.__call__(x_train=x_train, params=params)  #TODO Pass config as argument
+            best_model = mapping_instance.__call__(x_train=x_train, params=params)  # TODO Pass config as argument
             weights = os.path.join(best_trial.logdir, best_trial.last_result["checkpoint"])
             print("Loading from", weights)
-            best_model.load_weights(weights)
+            best_model.load_weights(weights)  # TODO Validate this loaded model.
             break
         except Exception as e:
             print(e, "from tuner")
@@ -81,33 +79,9 @@ def get_best_model(x_train, y_train, **kwargs):
 def get_sorted_trials(trial_list, metric):
     return sorted(trial_list, key=lambda trial: trial.last_result.get(metric, 0), reverse=True)
 
-
-
-
-# def get_best_result(trial_list, metric):
-#     """Retrieve the last result from the best trial."""
-#     return {metric: get_best_trial(trial_list, metric).last_result[metric]} # The get_best_trial used here is different!
-
-
-# def get_best_trial(model_creator, trial_list, metric): # Unnecessary! Shift it to get_best_model.
-#     """Restore a model from the best trial."""
-#     sorted_trials = get_sorted_trials(trial_list, metric)
-#     for best_trial in sorted_trials:
-#         try:
-#             print("Creating model...")
-#             model = model_creator(best_trial.config)
-#             weights = os.path.join(best_trial.logdir, best_trial.last_result["checkpoint"])
-#             print("Loading from", weights)
-#             model.load_weights(weights)
-#             break
-#         except Exception as e:
-#             print(e)
-#             print("Loading failed. Trying next model")
-#     return model
-
-
-# Get best model #
-# final_model = get_best_trial(make_model, trials, metric="mean_accuracy")
-
 # TODO
+# Add params.
+# Generalize metric choice.
+# Add compatibility for logReg and LDA.
+# Validate the loaded model.
 # Currently using grid search. Use hyperopt as the search algorithm.
