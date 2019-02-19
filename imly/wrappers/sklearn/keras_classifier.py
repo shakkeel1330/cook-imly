@@ -24,7 +24,13 @@ class SklearnKerasClassifier(KerasClassifier):
                 'model_name': primal_model.__class__.__name__
             }
 
-            # This is to update the 'classes_' variable used in keras_regressor
+            '''
+            Note -
+            This is to update the 'classes_' variable used in keras_regressor.
+            'classes_' variable is used by the score function of keras_regressor.
+            An alternate option would be to create our own score function.
+            '''
+
             y_train = np.array(y_train)
             if len(y_train.shape) == 2 and y_train.shape[1] > 1:
                 self.classes_ = np.arange(y_train.shape[1])
@@ -34,51 +40,13 @@ class SklearnKerasClassifier(KerasClassifier):
             else:
                 raise ValueError('Invalid shape for y_train: ' + str(y_train.shape))
 
-            # if (primal_model.__class__.__name__ != 'LinearDiscriminantAnalysis'):
-
-                ## Hyperas implementation ##
-                # def data():
-                #     return x_train, y_train
-
-                # def model_for_hyperas(x_train, y_train):
-                #     fn_name, param_name = get_model_design(primal_data['model_name'])
-                #     mapping_instance = create_model(fn_name=fn_name, param_name=param_name)
-                #     self.model = mapping_instance.__call__(x_train=x_train)
-                #     self.model.fit(x_train, y_train,
-                #                    batch_size={{choice([10, 30])}},
-                #                    epochs={{choice([100, 170])}},
-                #                    verbose=2)
-                #     # score, acc = self.model.evaluate(x_test, y_test, verbose=0)
-                #     # print('Test accuracy:', acc)
-                #     # return {'loss': -acc, 'status': STATUS_OK, 'model': self.model}
-                #     return {'status': STATUS_OK, 'model': self.model}
-
-
-
-
-                ## Talos implementation ##
-                # self.model, final_epoch, final_batch_size = get_best_model(x_train, y_train,
-                #                                                         primal_data=primal_data,
-                #                                                         params=self.params, 
-                #                                                         val_metric=self.val_metric, 
-                #                                                         metric=self.metric) 
-                # self.model.fit(x_train, y_train, epochs=final_epoch,
-                #                batch_size=final_batch_size, verbose=0)
-
-                
-
-            ## Temporarily bypassing Talos optimization for LDA ##
-            # else:
-            #     fn_name, param_name = get_model_design(primal_data['model_name'])
-            #     mapping_instance = create_model(fn_name=fn_name, param_name=param_name)
-            #     self.model = mapping_instance.__call__(x_train=x_train)
-            #     self.model.fit(x_train, y_train, epochs=500, batch_size=100)
-
+            
+            # Search for best model using Tune
             self.model = get_best_model(x_train, y_train,
                                         primal_data=primal_data,
                                         params=self.params)
-            self.model.fit(x_train, y_train, epochs=100,
-                            batch_size=30, verbose=0)
+            self.model.fit(x_train, y_train, epochs=200,
+                           batch_size=30, verbose=0)
 
             final_model = self.model
             return final_model

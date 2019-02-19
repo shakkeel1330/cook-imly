@@ -2,7 +2,7 @@ from keras.models import Sequential
 from keras.layers.core import Dense
 # from utils.losses import lda_loss
 from keras.regularizers import l2
-import json
+import json, os
 
 
 class create_model:
@@ -35,10 +35,13 @@ class create_model:
 
 def glm(**kwargs):  # Should param_name be optional or mandatory?
 
+    # This if statement is temporary and will be removed in the packaging-refactoring phase.
+    if __name__ != '__main__':
+        os.chdir('/home/shakkeel/Desktop/mlsquare/cook-imly/imly')
+
     params_json = json.load(open('../imly/architectures/sklearn/params.json'))
     params = params_json['params'][kwargs['param_name']]
-
-    kwargs.setdefault('params', params)
+    kwargs.setdefault('params', params)    
 
     model = Sequential()
     model.add(Dense(kwargs['params']['units'],

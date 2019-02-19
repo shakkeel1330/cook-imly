@@ -12,7 +12,6 @@ ray.init(ignore_reinit_error=True)
 def get_best_model(x_train, y_train, **kwargs):
 
     y_pred = kwargs['primal_data']['y_pred']
-    # params = kwargs['params']
     model_name = kwargs['primal_data']['model_name']
     fn_name, param_name = get_model_design(model_name)
 
